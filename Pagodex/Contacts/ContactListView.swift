@@ -23,6 +23,10 @@ protocol ContactListViewDataSource: AnyObject {
     
 }
 
+protocol ContactListViewDelegate: AnyObject {
+    func contactListView(_ contactListView: ContactListView, didSelectContactAtRow row: Int)
+}
+
 // TODO: Consider adding nib/storyboard compatibility
 class ContactListView: UIView {
     
@@ -33,6 +37,7 @@ class ContactListView: UIView {
     }
     
     public weak var dataSource: ContactListViewDataSource?
+    public weak var delegate: ContactListViewDelegate?
     
     private static let cellId = "ContactListViewCell"
     
@@ -84,12 +89,13 @@ class ContactListView: UIView {
 extension ContactListView: UITableViewDelegate {
     
     internal func tableView(_ tableView: UITableView,
-                   heightForRowAt indexPath: IndexPath) -> CGFloat {
+                            heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 94
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selected \(indexPath.row)")
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
+        delegate?.contactListView(self, didSelectContactAtRow: indexPath.row)
     }
     
 }

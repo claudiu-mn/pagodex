@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     private let contactListView = ContactListView()
     
     override func viewDidLoad() {
@@ -44,10 +45,13 @@ class ViewController: UIViewController {
         contactListView.backgroundColor = Colors.backgroundSecondary
         
         contactListView.dataSource = self
+        contactListView.delegate = self
     }
+    
 }
 
 extension ViewController: ContactListViewDataSource {
+    
     internal func numberOfitemsInContactListView(_ contactListView: ContactListView) -> Int {
         return 6
     }
@@ -59,4 +63,14 @@ extension ViewController: ContactListViewDataSource {
                        name: "Contact No. \(row)",
                        accesoryImage: UIImage(named: "Chevron")!)
     }
+    
+}
+
+extension ViewController: ContactListViewDelegate {
+    
+    func contactListView(_ contactListView: ContactListView,
+                         didSelectContactAtRow row: Int) {
+        debugPrint("Selected contact at \(row)")
+    }
+    
 }
