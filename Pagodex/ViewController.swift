@@ -54,6 +54,7 @@ extension ViewController: ContactListViewDataSource {
     
     internal func contactListView(_ contactListView: ContactListView,
                                   contactAtRow row: Int) -> Contact {
+        // TODO: Consider drawing the chevron in code
         return Contact(image: .checkmark,
                        name: "Contact No. \(row)",
                        accesoryImage: UIImage(named: "Chevron")!)

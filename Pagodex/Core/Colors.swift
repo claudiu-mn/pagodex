@@ -10,7 +10,7 @@ import UIKit
 class Colors {
 
     /// Change this to false to enable dark mode support.
-    private static let forceLight = false
+    private static let forceLight = true
     
     static let backgroundPrimary = UIColor { traits in
         return chooseColor(traitsCollection: traits,

@@ -85,7 +85,7 @@ extension ContactListView: UITableViewDelegate {
     
     internal func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 94
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
