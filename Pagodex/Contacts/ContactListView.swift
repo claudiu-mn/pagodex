@@ -146,7 +146,6 @@ extension UITableViewCell {
                                    hasSeparator: Bool) {
         accessoryView = UIImageView(image: accessoryImage)
         
-        // FIXME: Can't change color of disclosure indicator
         tintColor = accessoryColor
         
         var config = defaultContentConfiguration()
