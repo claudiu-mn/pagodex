@@ -15,6 +15,14 @@
 		B8C1949F2AD47B73004320A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C1949D2AD47B73004320A7 /* LaunchScreen.storyboard */; };
 		B8E3CAC12AD47E0300997A1B /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E3CAC02AD47E0300997A1B /* ContactListView.swift */; };
 		B8E3CACA2AD4A2CA00997A1B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E3CAC92AD4A2CA00997A1B /* Colors.swift */; };
+		B8E8FE2E2AD5C4EA00838D4E /* ContactListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE2D2AD5C4EA00838D4E /* ContactListRepository.swift */; };
+		B8E8FE302AD5C67900838D4E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE2F2AD5C67900838D4E /* Contact.swift */; };
+		B8E8FE332AD5C70B00838D4E /* CachingContactListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE322AD5C70B00838D4E /* CachingContactListRepository.swift */; };
+		B8E8FE352AD5C9F000838D4E /* RemoteContactListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE342AD5C9F000838D4E /* RemoteContactListSource.swift */; };
+		B8E8FE382AD5CA4800838D4E /* RemoteContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE372AD5CA4800838D4E /* RemoteContact.swift */; };
+		B8E8FE432AD5D81600838D4E /* GoRestContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE422AD5D81500838D4E /* GoRestContactList.swift */; };
+		B8E8FE452AD5DD8B00838D4E /* IntIdentifiableContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE442AD5DD8B00838D4E /* IntIdentifiableContact.swift */; };
+		B8E8FE482AD5E25300838D4E /* GoRestContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE472AD5E25300838D4E /* GoRestContact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +36,14 @@
 		B8C194A02AD47B73004320A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8E3CAC02AD47E0300997A1B /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
 		B8E3CAC92AD4A2CA00997A1B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B8E8FE2D2AD5C4EA00838D4E /* ContactListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListRepository.swift; sourceTree = "<group>"; };
+		B8E8FE2F2AD5C67900838D4E /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		B8E8FE322AD5C70B00838D4E /* CachingContactListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingContactListRepository.swift; sourceTree = "<group>"; };
+		B8E8FE342AD5C9F000838D4E /* RemoteContactListSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteContactListSource.swift; sourceTree = "<group>"; };
+		B8E8FE372AD5CA4800838D4E /* RemoteContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteContact.swift; sourceTree = "<group>"; };
+		B8E8FE422AD5D81500838D4E /* GoRestContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestContactList.swift; sourceTree = "<group>"; };
+		B8E8FE442AD5DD8B00838D4E /* IntIdentifiableContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntIdentifiableContact.swift; sourceTree = "<group>"; };
+		B8E8FE472AD5E25300838D4E /* GoRestContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestContact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +92,10 @@
 		B8E3CABF2AD47DF100997A1B /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				B8E8FE362AD5CA1A00838D4E /* Remote */,
+				B8E8FE312AD5C6E300838D4E /* Repository */,
 				B8E3CAC02AD47E0300997A1B /* ContactListView.swift */,
+				B8E8FE442AD5DD8B00838D4E /* IntIdentifiableContact.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -87,6 +106,35 @@
 				B8E3CAC92AD4A2CA00997A1B /* Colors.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		B8E8FE312AD5C6E300838D4E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B8E8FE2F2AD5C67900838D4E /* Contact.swift */,
+				B8E8FE2D2AD5C4EA00838D4E /* ContactListRepository.swift */,
+				B8E8FE322AD5C70B00838D4E /* CachingContactListRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		B8E8FE362AD5CA1A00838D4E /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				B8E8FE462AD5E24600838D4E /* GoRest */,
+				B8E8FE342AD5C9F000838D4E /* RemoteContactListSource.swift */,
+				B8E8FE372AD5CA4800838D4E /* RemoteContact.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		B8E8FE462AD5E24600838D4E /* GoRest */ = {
+			isa = PBXGroup;
+			children = (
+				B8E8FE422AD5D81500838D4E /* GoRestContactList.swift */,
+				B8E8FE472AD5E25300838D4E /* GoRestContact.swift */,
+			);
+			path = GoRest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,11 +208,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8E8FE432AD5D81600838D4E /* GoRestContactList.swift in Sources */,
 				B8C194972AD47B71004320A7 /* ViewController.swift in Sources */,
 				B8E3CACA2AD4A2CA00997A1B /* Colors.swift in Sources */,
+				B8E8FE352AD5C9F000838D4E /* RemoteContactListSource.swift in Sources */,
+				B8E8FE332AD5C70B00838D4E /* CachingContactListRepository.swift in Sources */,
+				B8E8FE2E2AD5C4EA00838D4E /* ContactListRepository.swift in Sources */,
+				B8E8FE482AD5E25300838D4E /* GoRestContact.swift in Sources */,
+				B8E8FE452AD5DD8B00838D4E /* IntIdentifiableContact.swift in Sources */,
 				B8C194932AD47B71004320A7 /* AppDelegate.swift in Sources */,
 				B8C194952AD47B71004320A7 /* SceneDelegate.swift in Sources */,
 				B8E3CAC12AD47E0300997A1B /* ContactListView.swift in Sources */,
+				B8E8FE382AD5CA4800838D4E /* RemoteContact.swift in Sources */,
+				B8E8FE302AD5C67900838D4E /* Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

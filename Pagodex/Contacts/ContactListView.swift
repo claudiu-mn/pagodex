@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Contact {
+struct SimpleContact {
     
     let image: UIImage
     let name: String
@@ -19,7 +19,7 @@ protocol ContactListViewDataSource: AnyObject {
     
     func numberOfitemsInContactListView(_ contactListView: ContactListView) -> Int
     func contactListView(_ contactListView: ContactListView,
-                         contactAtRow row: Int) -> Contact
+                         contactAtRow row: Int) -> SimpleContact
     
 }
 
@@ -52,7 +52,7 @@ class ContactListView: UIView {
         fatalError("init(coder:) is not supported")
     }
     
-    func setUpTableView() {
+    private func setUpTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         addSubview(tableView)
@@ -83,6 +83,10 @@ class ContactListView: UIView {
         
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    public func reloadData() {
+        tableView.reloadData()
     }
 }
 

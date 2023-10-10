@@ -9,15 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let contactListView = ContactListView()
+    private var contacts: [Contact] = []
+    
+    private weak var contactListView: ContactListView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpContactListView()
+        
+        fetchData()
     }
     
     private func setUpContactListView() {
+        let contactListView = ContactListView()
+        
         contactListView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(contactListView)
@@ -46,6 +52,33 @@ class ViewController: UIViewController {
         
         contactListView.dataSource = self
         contactListView.delegate = self
+        
+        self.contactListView = contactListView
+    }
+    
+    private func fetchData() {
+        let goRestTransformer: ([GoRestContact]) -> [RemoteContact] = { goRestContacts in
+            return goRestContacts.filter { goRestContact in
+                // TODO: Ask about values for status (<lower/upper/etc>case)
+                return goRestContact.status == "active"
+            }.map { goRestContact in
+                return RemoteContact(id: goRestContact.id,
+                                     email: goRestContact.email)
+            }
+        }
+        let source = GoRestContactList(listTransformer: goRestTransformer)
+        
+        let remoteContactMapper: (RemoteContact) -> Contact = { remote in
+            return Contact(id: remote.id, email: remote.email)
+        }
+        let repo =
+            CachingContactListRepository(remoteContactListSource: source,
+                                         remoteContactMapper: remoteContactMapper)
+        Task.init {
+            let contactList = try await repo.getList()
+            contacts = contactList
+            contactListView.reloadData()
+        }
     }
     
 }
@@ -53,15 +86,17 @@ class ViewController: UIViewController {
 extension ViewController: ContactListViewDataSource {
     
     internal func numberOfitemsInContactListView(_ contactListView: ContactListView) -> Int {
-        return 6
+        return contacts.count
     }
     
     internal func contactListView(_ contactListView: ContactListView,
-                                  contactAtRow row: Int) -> Contact {
+                                  contactAtRow row: Int) -> SimpleContact {
+        let contact = contacts[row]
+        
         // TODO: Consider drawing the chevron in code
-        return Contact(image: .checkmark,
-                       name: "Contact No. \(row)",
-                       accesoryImage: UIImage(named: "Chevron")!)
+        return SimpleContact(image: .checkmark,
+                             name: contact.email,
+                             accesoryImage: UIImage(named: "Chevron")!)
     }
     
 }
