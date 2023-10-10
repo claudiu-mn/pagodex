@@ -48,6 +48,7 @@ class ContactListView: UIView {
         setUpTableView()
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) is not supported")
     }
@@ -74,7 +75,7 @@ class ContactListView: UIView {
             .constraint(equalTo: bottomAnchor)
             .isActive = true
         
-        tableView.register(UITableViewCell.self,
+        tableView.register(ContactListViewCell.self,
                            forCellReuseIdentifier: ContactListView.cellId)
         
         // TODO: Separator isn't clearly visible
@@ -119,59 +120,28 @@ extension ContactListView: UITableViewDataSource {
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =
             tableView.dequeueReusableCell(withIdentifier: ContactListView.cellId,
-                                          for: indexPath)
+                                          for: indexPath) as! ContactListViewCell
         
         let row = indexPath.row
         let isLastRow = row == itemCountOrZero() - 1
         
         let contact = dataSource?.contactListView(self, contactAtRow: row)
         
-        cell.configureWith(image: contact?.image ?? UIImage.checkmark,
-                           accessoryImage: contact?.accesoryImage ?? UIImage(),
-                           accessoryColor: Colors.button,
-                           text: contact?.name ?? "",
-                           backgroundColor: Colors.backgroundPrimary,
-                           textColor: Colors.text,
-                           hasSeparator: !isLastRow)
-
-        return cell
-    }
-    
-}
-
-extension UITableViewCell {
-    
-    fileprivate func configureWith(image: UIImage,
-                                   accessoryImage: UIImage,
-                                   accessoryColor: UIColor,
-                                   text: String,
-                                   backgroundColor: UIColor,
-                                   textColor: UIColor,
-                                   hasSeparator: Bool) {
-        accessoryView = UIImageView(image: accessoryImage)
+        cell.name = contact?.name ?? ""
         
-        tintColor = accessoryColor
-        
-        var config = defaultContentConfiguration()
-
-        config.text = text
-        config.textProperties.color = textColor
-
-        config.image = image
-
-        contentConfiguration = config
-        
-        if !hasSeparator {
-            separatorInset = UIEdgeInsets(top: 0,
-                                          left: .greatestFiniteMagnitude,
-                                          bottom: 0,
-                                          right: 0)
+        if isLastRow {
+            cell.separatorInset = UIEdgeInsets(top: 0,
+                                               left: .greatestFiniteMagnitude,
+                                               bottom: 0,
+                                               right: 0)
         }
         
-        self.backgroundColor = backgroundColor
-        
-        
-        selectionStyle = .none
+        cell.backgroundColor = Colors.backgroundPrimary
+        cell.nameColor = Colors.text
+        cell.selectionStyle = .none
+        cell.tintColor = Colors.button
+
+        return cell
     }
     
 }
