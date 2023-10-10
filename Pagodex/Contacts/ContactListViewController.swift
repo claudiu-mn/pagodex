@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ContactListViewController.swift
 //  Pagodex
 //
 //  Created by Claudiu Miron on 09.10.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ContactListViewController: UIViewController {
     
     private var contacts: [Contact] = []
     
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: ContactListViewDataSource {
+extension ContactListViewController: ContactListViewDataSource {
     
     internal func numberOfitemsInContactListView(_ contactListView: ContactListView) -> Int {
         return contacts.count
@@ -101,7 +101,7 @@ extension ViewController: ContactListViewDataSource {
     
 }
 
-extension ViewController: ContactListViewDelegate {
+extension ContactListViewController: ContactListViewDelegate {
     
     func contactListView(_ contactListView: ContactListView,
                          didSelectContactAtRow row: Int) {

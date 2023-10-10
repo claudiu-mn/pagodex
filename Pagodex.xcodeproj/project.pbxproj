@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B8C194932AD47B71004320A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C194922AD47B71004320A7 /* AppDelegate.swift */; };
 		B8C194952AD47B71004320A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C194942AD47B71004320A7 /* SceneDelegate.swift */; };
-		B8C194972AD47B71004320A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C194962AD47B71004320A7 /* ViewController.swift */; };
+		B8C194972AD47B71004320A7 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C194962AD47B71004320A7 /* ContactListViewController.swift */; };
 		B8C1949A2AD47B71004320A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C194982AD47B71004320A7 /* Main.storyboard */; };
 		B8C1949C2AD47B73004320A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8C1949B2AD47B73004320A7 /* Assets.xcassets */; };
 		B8C1949F2AD47B73004320A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C1949D2AD47B73004320A7 /* LaunchScreen.storyboard */; };
@@ -29,7 +29,7 @@
 		B8C1948F2AD47B71004320A7 /* Pagodex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pagodex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C194922AD47B71004320A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8C194942AD47B71004320A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B8C194962AD47B71004320A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B8C194962AD47B71004320A7 /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 		B8C194992AD47B71004320A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8C1949B2AD47B73004320A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8C1949E2AD47B73004320A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,7 +80,6 @@
 				B8E3CAC82AD4A2B500997A1B /* Core */,
 				B8C194922AD47B71004320A7 /* AppDelegate.swift */,
 				B8C194942AD47B71004320A7 /* SceneDelegate.swift */,
-				B8C194962AD47B71004320A7 /* ViewController.swift */,
 				B8C194982AD47B71004320A7 /* Main.storyboard */,
 				B8C1949B2AD47B73004320A7 /* Assets.xcassets */,
 				B8C1949D2AD47B73004320A7 /* LaunchScreen.storyboard */,
@@ -96,6 +95,7 @@
 				B8E8FE312AD5C6E300838D4E /* Repository */,
 				B8E3CAC02AD47E0300997A1B /* ContactListView.swift */,
 				B8E8FE442AD5DD8B00838D4E /* IntIdentifiableContact.swift */,
+				B8C194962AD47B71004320A7 /* ContactListViewController.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -111,9 +111,9 @@
 		B8E8FE312AD5C6E300838D4E /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				B8E8FE322AD5C70B00838D4E /* CachingContactListRepository.swift */,
 				B8E8FE2F2AD5C67900838D4E /* Contact.swift */,
 				B8E8FE2D2AD5C4EA00838D4E /* ContactListRepository.swift */,
-				B8E8FE322AD5C70B00838D4E /* CachingContactListRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -122,8 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				B8E8FE462AD5E24600838D4E /* GoRest */,
-				B8E8FE342AD5C9F000838D4E /* RemoteContactListSource.swift */,
 				B8E8FE372AD5CA4800838D4E /* RemoteContact.swift */,
+				B8E8FE342AD5C9F000838D4E /* RemoteContactListSource.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -131,8 +131,8 @@
 		B8E8FE462AD5E24600838D4E /* GoRest */ = {
 			isa = PBXGroup;
 			children = (
-				B8E8FE422AD5D81500838D4E /* GoRestContactList.swift */,
 				B8E8FE472AD5E25300838D4E /* GoRestContact.swift */,
+				B8E8FE422AD5D81500838D4E /* GoRestContactList.swift */,
 			);
 			path = GoRest;
 			sourceTree = "<group>";
@@ -209,7 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8E8FE432AD5D81600838D4E /* GoRestContactList.swift in Sources */,
-				B8C194972AD47B71004320A7 /* ViewController.swift in Sources */,
+				B8C194972AD47B71004320A7 /* ContactListViewController.swift in Sources */,
 				B8E3CACA2AD4A2CA00997A1B /* Colors.swift in Sources */,
 				B8E8FE352AD5C9F000838D4E /* RemoteContactListSource.swift in Sources */,
 				B8E8FE332AD5C70B00838D4E /* CachingContactListRepository.swift in Sources */,
