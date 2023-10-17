@@ -7,9 +7,19 @@
 
 import UIKit
 
+private enum RemoteImageState {
+    case loading
+    case success (UIImage)
+    case error
+}
+
 class ContactListViewController: UIViewController {
     
+    private let imageRepo: CachingPhotoRepository = CachingPhotoRepository(remoteContactImageSource: PicsumPhotos())
+    
     private var contacts: [Contact] = []
+    
+    private var remoteImages: [Int: RemoteImageState] = [:]
     
     private weak var contactListView: ContactListView!
     
@@ -92,11 +102,40 @@ extension ContactListViewController: ContactListViewDataSource {
     internal func contactListView(_ contactListView: ContactListView,
                                   contactAtRow row: Int) -> SimpleContact {
         let contact = contacts[row]
+        let id = contact.id
         
-        // TODO: Consider drawing the chevron in code
-        return SimpleContact(image: .checkmark,
-                             name: contact.email,
-                             accesoryImage: UIImage(named: "Chevron")!)
+        var image: UIImage?
+        
+        if !contact.id.isMultiple(of: 2) {
+            let imageState = remoteImages[id]
+            
+            switch imageState {
+            case .none:
+                remoteImages[id] = .loading
+                Task.init {
+                    let image = try? await imageRepo.getImage(id)
+                    if let image = image {
+                        remoteImages[id] = .success(image)
+                    } else {
+                        remoteImages[id] = .error
+                    }
+                    contactListView.reload(row: row)
+                }
+                break
+                
+            case .loading:
+                break
+                
+            case .success(let img):
+                image = img
+                break
+                
+            case .error:
+                break
+            }
+        }
+        
+        return SimpleContact(name: contact.email, image: image)
     }
     
 }

@@ -5,7 +5,9 @@
 //  Created by Claudiu Miron on 10.10.2023.
 //
 
-class CachingContactListRepository: ContactListRepository {
+// TODO: Are we sure we want this to be an actor just to shield `list`
+//       from multiple simultaneous writes?
+actor CachingContactListRepository: ContactListRepository {
     
     private let remoteContactListSource: RemoteContactListSource
     private let remoteContactMapper: (RemoteContact) -> Contact

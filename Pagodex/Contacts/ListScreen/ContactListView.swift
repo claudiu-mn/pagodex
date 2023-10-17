@@ -9,9 +9,8 @@ import UIKit
 
 struct SimpleContact {
     
-    let image: UIImage
     let name: String
-    let accesoryImage: UIImage
+    let image: UIImage?
     
 }
 
@@ -89,6 +88,12 @@ class ContactListView: UIView {
     public func reloadData() {
         tableView.reloadData()
     }
+    
+    public func reload(row: Int) {
+        tableView.reloadRows(at: [IndexPath(row: row, section: 0)],
+                             with: .fade)
+    }
+    
 }
 
 extension ContactListView: UITableViewDelegate {
@@ -101,6 +106,12 @@ extension ContactListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
         delegate?.contactListView(self, didSelectContactAtRow: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
+        
     }
     
 }
@@ -126,7 +137,7 @@ extension ContactListView: UITableViewDataSource {
         let isLastRow = row == itemCountOrZero() - 1
         
         let contact = dataSource?.contactListView(self, contactAtRow: row)
-        
+        cell.leadingImage = contact?.image
         cell.name = contact?.name ?? ""
         
         if isLastRow {
