@@ -107,6 +107,8 @@ extension ContactListViewController: ContactListViewDataSource {
         var image: UIImage?
         
         if !contact.id.isMultiple(of: 2) {
+            // TODO: `0.isMultiple(of: 2) == true` Do we want that?
+            
             let imageState = remoteImages[id]
             
             switch imageState {
