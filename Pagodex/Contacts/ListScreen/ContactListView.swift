@@ -151,6 +151,7 @@ extension ContactListView: UITableViewDataSource {
         cell.nameColor = Colors.text
         cell.selectionStyle = .none
         cell.tintColor = Colors.button
+        cell.hasDisclosureIndicator = true
 
         return cell
     }

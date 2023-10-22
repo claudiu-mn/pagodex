@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B80FBC722AE5715100118504 /* ChevronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FBC712AE5715100118504 /* ChevronView.swift */; };
 		B8855D642ADEF80F008AF1C0 /* ContactImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8855D632ADEF80F008AF1C0 /* ContactImageRepository.swift */; };
 		B8855D662ADEFA95008AF1C0 /* CachingPhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8855D652ADEFA95008AF1C0 /* CachingPhotoRepository.swift */; };
 		B8855D682ADF215B008AF1C0 /* RemoteContactImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8855D672ADF215B008AF1C0 /* RemoteContactImageSource.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B80FBC712AE5715100118504 /* ChevronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronView.swift; sourceTree = "<group>"; };
 		B8855D632ADEF80F008AF1C0 /* ContactImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactImageRepository.swift; sourceTree = "<group>"; };
 		B8855D652ADEFA95008AF1C0 /* CachingPhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingPhotoRepository.swift; sourceTree = "<group>"; };
 		B8855D672ADF215B008AF1C0 /* RemoteContactImageSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteContactImageSource.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				B8E3CAC02AD47E0300997A1B /* ContactListView.swift */,
 				B8E8FE4A2AD5F0F400838D4E /* ContactListViewCell.swift */,
 				B8C194962AD47B71004320A7 /* ContactListViewController.swift */,
+				B80FBC712AE5715100118504 /* ChevronView.swift */,
 			);
 			path = ListScreen;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				B8E8FE352AD5C9F000838D4E /* RemoteContactListSource.swift in Sources */,
 				B8E8FE332AD5C70B00838D4E /* CachingContactListRepository.swift in Sources */,
 				B8E8FE2E2AD5C4EA00838D4E /* ContactListRepository.swift in Sources */,
+				B80FBC722AE5715100118504 /* ChevronView.swift in Sources */,
 				B8E8FE482AD5E25300838D4E /* GoRestContact.swift in Sources */,
 				B8E8FE452AD5DD8B00838D4E /* IntIdentifiableContact.swift in Sources */,
 				B8855D682ADF215B008AF1C0 /* RemoteContactImageSource.swift in Sources */,
