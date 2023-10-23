@@ -23,7 +23,8 @@ protocol ContactListViewDataSource: AnyObject {
 }
 
 protocol ContactListViewDelegate: AnyObject {
-    func contactListView(_ contactListView: ContactListView, didSelectContactAtRow row: Int)
+    func contactListView(_ contactListView: ContactListView,
+                         didSelectContactAtRow row: Int)
 }
 
 // TODO: Consider adding nib/storyboard compatibility
@@ -40,7 +41,7 @@ class ContactListView: UIView {
     
     private static let cellId = "ContactListViewCell"
     
-    private let tableView = UITableView()
+    private let tableView = UITableView(frame: .zero, style: .plain)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,22 +58,7 @@ class ContactListView: UIView {
         
         addSubview(tableView)
         
-        tableView
-            .leadingAnchor
-            .constraint(equalTo: leadingAnchor)
-            .isActive = true
-        tableView
-            .trailingAnchor
-            .constraint(equalTo: trailingAnchor)
-            .isActive = true
-        tableView
-            .topAnchor
-            .constraint(equalTo: topAnchor)
-            .isActive = true
-        tableView
-            .bottomAnchor
-            .constraint(equalTo: bottomAnchor)
-            .isActive = true
+        tableView.fill(self)
         
         tableView.register(ContactListViewCell.self,
                            forCellReuseIdentifier: ContactListView.cellId)
@@ -106,12 +92,6 @@ extension ContactListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
         delegate?.contactListView(self, didSelectContactAtRow: indexPath.row)
-    }
-    
-    func tableView(_ tableView: UITableView,
-                   willDisplay cell: UITableViewCell,
-                   forRowAt indexPath: IndexPath) {
-        
     }
     
 }
@@ -152,7 +132,7 @@ extension ContactListView: UITableViewDataSource {
         cell.selectionStyle = .none
         cell.tintColor = Colors.button
         cell.hasDisclosureIndicator = true
-
+        
         return cell
     }
     

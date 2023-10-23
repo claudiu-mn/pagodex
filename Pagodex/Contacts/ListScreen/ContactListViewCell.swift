@@ -81,11 +81,17 @@ class ContactListViewCell: UITableViewCell {
     }
     
     private func setUpViews() {
+        let spacing = ContactListViewCell.spacing
+        
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(stackView)
         self.stackView = stackView
-        stick(stackView, to: contentView, margin: ContactListViewCell.spacing)
+        stackView.fill(contentView,
+                       with: UIEdgeInsets(top: spacing,
+                                          left: spacing,
+                                          bottom: spacing,
+                                          right: spacing))
         
         let leadingView = UIView()
         leadingView.layer.masksToBounds = true
@@ -102,17 +108,18 @@ class ContactListViewCell: UITableViewCell {
         leadingView.addSubview(initialsLabel)
         self.initialsLabel = initialsLabel
         
-        stick(initialsLabel, to: leadingView)
+        initialsLabel.fill(leadingView)
         
         let leadingImageView = UIImageView()
         leadingImageView.translatesAutoresizingMaskIntoConstraints = false
         leadingView.addSubview(leadingImageView)
         self.leadingImageView = leadingImageView
         
-        stick(leadingImageView, to: leadingView)
+        leadingView.fill(leadingView)
         
         let nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.lineBreakMode = .byTruncatingMiddle
         stackView.addArrangedSubview(nameLabel)
         self.nameLabel = nameLabel
         
@@ -143,31 +150,19 @@ class ContactListViewCell: UITableViewCell {
         stackView.setCustomSpacing(spacing, after: nameLabel)
     }
     
-    private func stick(_ aView: UIView,
-                       to anotherView: UIView,
-                       margin: Double = 0) {
-        aView.leadingAnchor.constraint(equalTo: anotherView.leadingAnchor,
-                                       constant: margin).isActive = true
-        aView.trailingAnchor.constraint(equalTo: anotherView.trailingAnchor,
-                                        constant: -margin).isActive = true
-        aView.topAnchor.constraint(equalTo: anotherView.topAnchor,
-                                   constant: margin).isActive = true
-        aView.bottomAnchor.constraint(equalTo: anotherView.bottomAnchor,
-                                      constant: -margin).isActive = true
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         
         leadingView.layoutIfNeeded()
         leadingView.layer.cornerRadius = leadingView.layer.bounds.width / 2
     }
+    
 }
 
 /// Stolen shamelessly from https://stackoverflow.com/a/64576199
 extension String {
     // TODO: This hasn't been tested/looked at properly
-    // TODO: What about multiple spaces
+    // TODO: What about multiple spaces?
     var initials: String {
         return self.components(separatedBy: " ")
             .reduce("") {

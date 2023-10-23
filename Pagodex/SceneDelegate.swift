@@ -11,12 +11,48 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    func scene(_ scene: UIScene,
+               willConnectTo session: UISceneSession,
+               options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let window = UIWindow(windowScene: windowScene)
+        
+        
+        let navItem = UINavigationItem(title: "Cntct")
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [.foregroundColor: Colors.text]
+        appearance.backgroundColor = Colors.backgroundPrimary
+        navItem.standardAppearance = appearance
+        
+        let viewController = ContactListViewController()
+        viewController.title = "Contacte"
+        
+        let nav = UINavigationController(rootViewController: viewController)
+        
+        let standardAppearance = UINavigationBarAppearance()
+        standardAppearance.backgroundColor = Colors.backgroundPrimary
+        standardAppearance.largeTitleTextAttributes = [.foregroundColor: Colors.text]
+        standardAppearance.titleTextAttributes = [.foregroundColor: Colors.text]
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        let compactAppearance = standardAppearance.copy()
+        
+        let navBar = nav.navigationBar
+        navBar.prefersLargeTitles = true
+        navBar.standardAppearance = standardAppearance
+        navBar.scrollEdgeAppearance = standardAppearance
+        navBar.compactAppearance = compactAppearance
+        navBar.layoutMargins.left = 24
+        if #available(iOS 15.0, *) {
+            navBar.compactScrollEdgeAppearance = compactAppearance
+        }
+        
+        window.rootViewController = nav
+        
+        self.window = window
+        
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

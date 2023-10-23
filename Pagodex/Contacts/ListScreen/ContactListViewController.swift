@@ -7,6 +7,13 @@
 
 import UIKit
 
+protocol ContactListViewControllerDelegate: AnyObject {
+    func contactListViewController(_ contactListViewController: ContactListViewController,
+                                   didSelectContact: Contact)
+    
+    func didWantNewContact(in contactListViewController: ContactListViewController)
+}
+
 private enum RemoteImageState {
     case loading
     case success (UIImage)
@@ -14,6 +21,8 @@ private enum RemoteImageState {
 }
 
 class ContactListViewController: UIViewController {
+    
+    public weak var delegate: ContactListViewControllerDelegate?
     
     private let imageRepo: CachingPhotoRepository = CachingPhotoRepository(remoteContactImageSource: PicsumPhotos())
     
@@ -146,7 +155,7 @@ extension ContactListViewController: ContactListViewDelegate {
     
     func contactListView(_ contactListView: ContactListView,
                          didSelectContactAtRow row: Int) {
-        debugPrint("Selected contact at \(row)")
+        delegate?.contactListViewController(self, didSelectContact: contacts[row])
     }
     
 }
