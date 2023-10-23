@@ -16,15 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let window = UIWindow(windowScene: windowScene)
-        
-        
-        let navItem = UINavigationItem(title: "Cntct")
         
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [.foregroundColor: Colors.text]
         appearance.backgroundColor = Colors.backgroundPrimary
-        navItem.standardAppearance = appearance
         
         let viewController = ContactListViewController()
         viewController.title = "Contacte"
@@ -39,6 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let compactAppearance = standardAppearance.copy()
         
         let navBar = nav.navigationBar
+        navBar.overrideUserInterfaceStyle = Colors.overridenUserInterfaceStyle(for: nav.traitCollection)
         navBar.prefersLargeTitles = true
         navBar.standardAppearance = standardAppearance
         navBar.scrollEdgeAppearance = standardAppearance
@@ -48,10 +44,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             navBar.compactScrollEdgeAppearance = compactAppearance
         }
         
+        let window = UIWindow(windowScene: windowScene)
         window.rootViewController = nav
-        
         self.window = window
-        
         window.makeKeyAndVisible()
     }
 

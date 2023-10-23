@@ -13,21 +13,33 @@ class Colors {
     private static let forceLight = true
     
     static let backgroundPrimary = UIColor { traits in
-        return chooseColor(traitsCollection: traits,
-                           light: UIColor(rgb: 0xFFFFFF),
-                           dark: UIColor(rgb: 0x000000))
+        return chooseObject(traitCollection: traits,
+                            light: UIColor(rgb: 0xFFFFFF),
+                            dark: UIColor(rgb: 0x000000))
     }
     
     static let backgroundSecondary = UIColor { traits in
-        return chooseColor(traitsCollection: traits,
-                           light: UIColor(rgb: 0x0EFF2F7),
-                           dark: UIColor(rgb: 0x151515))
+        return chooseObject(traitCollection: traits,
+                            light: UIColor(rgb: 0x0EFF2F7),
+                            dark: UIColor(rgb: 0x151515))
+    }
+    
+    static func statusBarStyle(for traits: UITraitCollection) -> UIStatusBarStyle {
+        return chooseObject(traitCollection: traits,
+                            light: UIStatusBarStyle.darkContent,
+                            dark: UIStatusBarStyle.lightContent)
+    }
+    
+    static func overridenUserInterfaceStyle(for traits: UITraitCollection) -> UIUserInterfaceStyle {
+        return chooseObject(traitCollection: traits,
+                            light: .light,
+                            dark: .dark)
     }
     
     static let text = UIColor { traits in
-        return chooseColor(traitsCollection: traits,
-                           light: UIColor(rgb: 0x161F28),
-                           dark: UIColor(rgb: 0xFFFFFF))
+        return chooseObject(traitCollection: traits,
+                            light: UIColor(rgb: 0x161F28),
+                            dark: UIColor(rgb: 0xFFFFFF))
     }
     
     // TODO: Think of a better name
@@ -35,13 +47,14 @@ class Colors {
         return UIColor(rgb: 0xC1C8D7)
     }
     
-    private static func chooseColor(traitsCollection: UITraitCollection,
-                                    light: UIColor,
-                                    dark: UIColor) -> UIColor {
+    private static func chooseObject<T>(traitCollection: UITraitCollection,
+                                        light: T,
+                                        dark: T) -> T {
         guard !forceLight else { return light }
         
-        return traitsCollection.userInterfaceStyle == .dark ? dark : light
+        return traitCollection.userInterfaceStyle == .dark ? dark : light
     }
+    
 }
 
 /// Stolen shamelessly from https://stackoverflow.com/a/35074069

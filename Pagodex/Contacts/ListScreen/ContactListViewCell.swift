@@ -8,6 +8,7 @@
 import UIKit
 
 // TODO: I don't like the sloppy layout code in this view
+// TODO: Can we flatten the view hierarchy?
 class ContactListViewCell: UITableViewCell {
     
     private static let spacing = 24.0

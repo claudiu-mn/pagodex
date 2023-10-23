@@ -1,5 +1,5 @@
 //
-//  ViewUtilities.swift
+//  UIView+Constraints.swift
 //  Pagodex
 //
 //  Created by Claudiu Miron on 22.10.2023.

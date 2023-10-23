@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B80FBC722AE5715100118504 /* ChevronView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FBC712AE5715100118504 /* ChevronView.swift */; };
-		B80FBC742AE5929300118504 /* ViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FBC732AE5929300118504 /* ViewUtilities.swift */; };
+		B80FBC742AE5929300118504 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FBC732AE5929300118504 /* UIView+Constraints.swift */; };
 		B8855D642ADEF80F008AF1C0 /* ContactImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8855D632ADEF80F008AF1C0 /* ContactImageRepository.swift */; };
 		B8855D662ADEFA95008AF1C0 /* CachingPhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8855D652ADEFA95008AF1C0 /* CachingPhotoRepository.swift */; };
 		B8855D682ADF215B008AF1C0 /* RemoteContactImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8855D672ADF215B008AF1C0 /* RemoteContactImageSource.swift */; };
@@ -34,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		B80FBC712AE5715100118504 /* ChevronView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronView.swift; sourceTree = "<group>"; };
-		B80FBC732AE5929300118504 /* ViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtilities.swift; sourceTree = "<group>"; };
+		B80FBC732AE5929300118504 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		B8855D632ADEF80F008AF1C0 /* ContactImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactImageRepository.swift; sourceTree = "<group>"; };
 		B8855D652ADEFA95008AF1C0 /* CachingPhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingPhotoRepository.swift; sourceTree = "<group>"; };
 		B8855D672ADF215B008AF1C0 /* RemoteContactImageSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteContactImageSource.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				B8E3CAC92AD4A2CA00997A1B /* Colors.swift */,
-				B80FBC732AE5929300118504 /* ViewUtilities.swift */,
+				B80FBC732AE5929300118504 /* UIView+Constraints.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8E8FE432AD5D81600838D4E /* GoRestContactList.swift in Sources */,
-				B80FBC742AE5929300118504 /* ViewUtilities.swift in Sources */,
+				B80FBC742AE5929300118504 /* UIView+Constraints.swift in Sources */,
 				B8C194972AD47B71004320A7 /* ContactListViewController.swift in Sources */,
 				B8E3CACA2AD4A2CA00997A1B /* Colors.swift in Sources */,
 				B8E8FE352AD5C9F000838D4E /* RemoteContactListSource.swift in Sources */,
