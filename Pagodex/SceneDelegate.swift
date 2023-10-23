@@ -21,24 +21,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let nav = UINavigationController(rootViewController: viewController)
         
-        let standardAppearance = UINavigationBarAppearance()
-        standardAppearance.backgroundColor = Colors.backgroundPrimary
-        standardAppearance.largeTitleTextAttributes = [.foregroundColor: Colors.text]
-        standardAppearance.titleTextAttributes = [.foregroundColor: Colors.text]
-
-        let compactAppearance = standardAppearance.copy()
-        
-        let navBar = nav.navigationBar
-        navBar.overrideUserInterfaceStyle = Colors.overridenUserInterfaceStyle(for: nav.traitCollection)
-        navBar.prefersLargeTitles = true
-        navBar.standardAppearance = standardAppearance
-        navBar.scrollEdgeAppearance = standardAppearance
-        navBar.compactAppearance = compactAppearance
-        navBar.layoutMargins.left = 24
-        if #available(iOS 15.0, *) {
-            navBar.compactScrollEdgeAppearance = compactAppearance
-        }
-        
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = nav
         self.window = window

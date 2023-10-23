@@ -30,6 +30,7 @@
 		B8E8FE452AD5DD8B00838D4E /* IntIdentifiableContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE442AD5DD8B00838D4E /* IntIdentifiableContact.swift */; };
 		B8E8FE482AD5E25300838D4E /* GoRestContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE472AD5E25300838D4E /* GoRestContact.swift */; };
 		B8E8FE4B2AD5F0F400838D4E /* ContactListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE4A2AD5F0F400838D4E /* ContactListViewCell.swift */; };
+		B8F3EDCD2AE6E614004A601B /* UINavigationController+Pago.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDCC2AE6E614004A601B /* UINavigationController+Pago.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		B8E8FE442AD5DD8B00838D4E /* IntIdentifiableContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntIdentifiableContact.swift; sourceTree = "<group>"; };
 		B8E8FE472AD5E25300838D4E /* GoRestContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestContact.swift; sourceTree = "<group>"; };
 		B8E8FE4A2AD5F0F400838D4E /* ContactListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewCell.swift; sourceTree = "<group>"; };
+		B8F3EDCC2AE6E614004A601B /* UINavigationController+Pago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Pago.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				B8E3CAC92AD4A2CA00997A1B /* Colors.swift */,
 				B80FBC732AE5929300118504 /* UIView+Constraints.swift */,
+				B8F3EDCC2AE6E614004A601B /* UINavigationController+Pago.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				B8E8FE382AD5CA4800838D4E /* RemoteContact.swift in Sources */,
 				B8E8FE4B2AD5F0F400838D4E /* ContactListViewCell.swift in Sources */,
 				B8E8FE302AD5C67900838D4E /* Contact.swift in Sources */,
+				B8F3EDCD2AE6E614004A601B /* UINavigationController+Pago.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
