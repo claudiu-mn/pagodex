@@ -16,11 +16,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        
-        let appearance = UINavigationBarAppearance()
-        appearance.titleTextAttributes = [.foregroundColor: Colors.text]
-        appearance.backgroundColor = Colors.backgroundPrimary
-        
         let viewController = ContactListViewController()
         viewController.title = "Contacte"
         
