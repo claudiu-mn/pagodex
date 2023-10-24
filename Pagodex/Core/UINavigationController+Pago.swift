@@ -8,6 +8,8 @@
 import UIKit
 
 extension UINavigationController {
+    
+    // TODO: Make a custom nav bar (probably a custom UINavigationController)
     open override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,4 +31,5 @@ extension UINavigationController {
             navBar.compactScrollEdgeAppearance = compactAppearance
         }
     }
+    
 }

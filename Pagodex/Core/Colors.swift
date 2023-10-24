@@ -24,6 +24,11 @@ class Colors {
                             dark: UIColor(rgb: 0x151515))
     }
     
+    // TODO: Think of a better name
+    static let backgroundTertiary = UIColor { traits in
+        return UIColor(rgb: 0xC1C8D7)
+    }
+    
     static func statusBarStyle(for traits: UITraitCollection) -> UIStatusBarStyle {
         return chooseObject(traitCollection: traits,
                             light: UIStatusBarStyle.darkContent,
@@ -42,9 +47,8 @@ class Colors {
                             dark: UIColor(rgb: 0xFFFFFF))
     }
     
-    // TODO: Think of a better name
     static let button = UIColor { traits in
-        return UIColor(rgb: 0xC1C8D7)
+        return UIColor(rgb: 0x98A5BE)
     }
     
     private static func chooseObject<T>(traitCollection: UITraitCollection,

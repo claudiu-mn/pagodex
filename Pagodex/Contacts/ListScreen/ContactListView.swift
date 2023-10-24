@@ -130,7 +130,7 @@ extension ContactListView: UITableViewDataSource {
         cell.backgroundColor = Colors.backgroundPrimary
         cell.nameColor = Colors.text
         cell.selectionStyle = .none
-        cell.tintColor = Colors.button
+        cell.tintColor = Colors.backgroundTertiary
         cell.hasDisclosureIndicator = true
         
         return cell

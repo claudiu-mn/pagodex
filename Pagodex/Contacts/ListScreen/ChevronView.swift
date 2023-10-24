@@ -8,8 +8,8 @@
 import UIKit
 
 class ChevronView: UIView {
+    
     override func draw(_ rect: CGRect) {
-
         tintColor.setStroke()
         
         let lineWidth = 2.0
@@ -33,6 +33,6 @@ class ChevronView: UIView {
         path.lineJoinStyle = .round // TODO: Tip of chevron needs to be sharp
         path.lineWidth = lineWidth
         path.stroke()
-        
     }
+    
 }

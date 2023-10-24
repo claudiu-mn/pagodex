@@ -34,6 +34,14 @@ class ContactListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        let barButtonItem = UIBarButtonItem(image: UIImage(named: "AddContact"),
+                                            style: .plain,
+                                            target: self,
+                                            action: #selector(onRightBarButtonTapped))
+        barButtonItem.tintColor = Colors.button
+        
+        navigationItem.rightBarButtonItem = barButtonItem
         
         title = "Contacte" // TODO: Add i18n
         
@@ -100,6 +108,11 @@ class ContactListViewController: UIViewController {
             contacts = contactList
             contactListView.reloadData()
         }
+    }
+    
+    @objc
+    private func onRightBarButtonTapped() {
+        delegate?.didWantNewContact(in: self)
     }
     
 }
