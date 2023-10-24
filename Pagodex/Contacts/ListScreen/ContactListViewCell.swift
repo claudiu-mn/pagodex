@@ -113,10 +113,11 @@ class ContactListViewCell: UITableViewCell {
         
         let leadingImageView = UIImageView()
         leadingImageView.translatesAutoresizingMaskIntoConstraints = false
+        leadingImageView.contentMode = .scaleToFill
         leadingView.addSubview(leadingImageView)
         self.leadingImageView = leadingImageView
         
-        leadingView.fill(leadingView)
+        leadingImageView.fill(leadingView)
         
         let nameLabel = UILabel()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false

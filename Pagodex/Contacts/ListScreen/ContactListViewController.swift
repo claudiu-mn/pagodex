@@ -9,7 +9,7 @@ import UIKit
 
 protocol ContactListViewControllerDelegate: AnyObject {
     func contactListViewController(_ contactListViewController: ContactListViewController,
-                                   didSelectContact: Contact)
+                                   didSelectContact contact: Contact)
     
     func didWantNewContact(in contactListViewController: ContactListViewController)
 }
@@ -34,6 +34,8 @@ class ContactListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Contacte" // TODO: Add i18n
         
         setUpContactListView()
         
