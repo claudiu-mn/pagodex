@@ -1,5 +1,5 @@
 //
-//  ContactListViewCell.swift
+//  PeopleViewCell.swift
 //  Pagodex
 //
 //  Created by Claudiu Miron on 10.10.2023.
@@ -9,7 +9,7 @@ import UIKit
 
 // TODO: I don't like the sloppy layout code in this view
 // TODO: Can we flatten the view hierarchy?
-class ContactListViewCell: UITableViewCell {
+class PeopleViewCell: UITableViewCell {
     
     private static let spacing = 24.0
     private static let chevronSize = CGSize(width: 9, height: 16)
@@ -82,7 +82,7 @@ class ContactListViewCell: UITableViewCell {
     }
     
     private func setUpViews() {
-        let spacing = ContactListViewCell.spacing
+        let spacing = PeopleViewCell.spacing
         
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +98,7 @@ class ContactListViewCell: UITableViewCell {
         leadingView.layer.masksToBounds = true
         leadingView.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(leadingView)
-        stackView.setCustomSpacing(ContactListViewCell.spacing,
+        stackView.setCustomSpacing(PeopleViewCell.spacing,
                                    after: leadingView)
         leadingView.widthAnchor.constraint(equalTo: leadingView.heightAnchor).isActive = true
         self.leadingView = leadingView
@@ -129,10 +129,12 @@ class ContactListViewCell: UITableViewCell {
         trailingView.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(trailingView)
         
-        trailingView.widthAnchor.constraint(equalToConstant: ContactListViewCell.chevronSize.width).isActive = true
+        trailingView.widthAnchor.constraint(equalToConstant: PeopleViewCell.chevronSize.width).isActive = true
         
         self.trailingView = trailingView
         
+        // TODO: Consider drawing in a layer here,
+        //       instead of in a dedicated chevron UIView
         let chevron = ChevronView()
         chevron.translatesAutoresizingMaskIntoConstraints = false
         chevron.backgroundColor = .clear
@@ -140,15 +142,15 @@ class ContactListViewCell: UITableViewCell {
         
         chevron.centerXAnchor.constraint(equalTo: trailingView.centerXAnchor).isActive = true
         chevron.centerYAnchor.constraint(equalTo: trailingView.centerYAnchor).isActive = true
-        chevron.widthAnchor.constraint(equalToConstant: ContactListViewCell.chevronSize.width).isActive = true
-        chevron.heightAnchor.constraint(equalToConstant: ContactListViewCell.chevronSize.height).isActive = true
+        chevron.widthAnchor.constraint(equalToConstant: PeopleViewCell.chevronSize.width).isActive = true
+        chevron.heightAnchor.constraint(equalToConstant: PeopleViewCell.chevronSize.height).isActive = true
         
         updateDisclosureIndicatorVisibility(hasDisclosureIndicator)
     }
     
     private func updateDisclosureIndicatorVisibility(_ visible: Bool) {
         trailingView.isHidden = !visible
-        let spacing = visible ? ContactListViewCell.spacing : 0.0
+        let spacing = visible ? PeopleViewCell.spacing : 0.0
         stackView.setCustomSpacing(spacing, after: nameLabel)
     }
     

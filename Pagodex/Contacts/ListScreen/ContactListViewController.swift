@@ -30,7 +30,7 @@ class ContactListViewController: UIViewController {
     
     private var remoteImages: [Int: RemoteImageState] = [:]
     
-    private weak var contactListView: ContactListView!
+    private weak var peopleView: PeopleView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,38 +51,38 @@ class ContactListViewController: UIViewController {
     }
     
     private func setUpContactListView() {
-        let contactListView = ContactListView()
+        let peopleView = PeopleView()
         
-        contactListView.translatesAutoresizingMaskIntoConstraints = false
+        peopleView.translatesAutoresizingMaskIntoConstraints = false
         
-        view.addSubview(contactListView)
+        view.addSubview(peopleView)
         
-        contactListView
+        peopleView
             .leadingAnchor
             .constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)
             .isActive = true
-        contactListView
+        peopleView
             .trailingAnchor
             .constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
             .isActive = true
-        contactListView
+        peopleView
             .topAnchor
             .constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
             .isActive = true
         // TODO: Is bottom padding automatically added to the table view to
         //       account for safe area? Seems it does on iOS 16.4 sim (iPhone 13).
         //       Wasn't expecting that; investigate.
-        contactListView
+        peopleView
             .bottomAnchor
             .constraint(equalTo: view.bottomAnchor)
             .isActive = true
         
-        contactListView.backgroundColor = Colors.backgroundSecondary
+        peopleView.backgroundColor = Colors.backgroundSecondary
         
-        contactListView.dataSource = self
-        contactListView.delegate = self
+        peopleView.dataSource = self
+        peopleView.delegate = self
         
-        self.contactListView = contactListView
+        self.peopleView = peopleView
     }
     
     private func fetchData() {
@@ -106,7 +106,7 @@ class ContactListViewController: UIViewController {
         Task.init {
             let contactList = try await repo.getList()
             contacts = contactList
-            contactListView.reloadData()
+            peopleView.reloadData()
         }
     }
     
@@ -117,14 +117,14 @@ class ContactListViewController: UIViewController {
     
 }
 
-extension ContactListViewController: ContactListViewDataSource {
+extension ContactListViewController: PeopleViewDataSource {
     
-    internal func numberOfitemsInContactListView(_ contactListView: ContactListView) -> Int {
+    internal func count(in peopleView: PeopleView) -> Int {
         return contacts.count
     }
     
-    internal func contactListView(_ contactListView: ContactListView,
-                                  contactAtRow row: Int) -> SimpleContact {
+    internal func peopleView(_ peopleView: PeopleView,
+                             personAtRow row: Int) -> Person {
         let contact = contacts[row]
         let id = contact.id
         
@@ -145,7 +145,7 @@ extension ContactListViewController: ContactListViewDataSource {
                     } else {
                         remoteImages[id] = .error
                     }
-                    contactListView.reload(row: row)
+                    peopleView.reload(row: row)
                 }
                 break
                 
@@ -161,16 +161,17 @@ extension ContactListViewController: ContactListViewDataSource {
             }
         }
         
-        return SimpleContact(name: contact.email, image: image)
+        return Person(name: contact.email, image: image)
     }
     
 }
 
-extension ContactListViewController: ContactListViewDelegate {
+extension ContactListViewController: PeopleViewDelegate {
     
-    func contactListView(_ contactListView: ContactListView,
-                         didSelectContactAtRow row: Int) {
-        delegate?.contactListViewController(self, didSelectContact: contacts[row])
+    internal func peopleView(_ peopleView: PeopleView,
+                             didSelectPersonAtRow row: Int) {
+        delegate?.contactListViewController(self,
+                                            didSelectContact: contacts[row])
     }
     
 }

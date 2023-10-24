@@ -1,5 +1,5 @@
 //
-//  ContactListView.swift
+//  PeopleView.swift
 //  Pagodex
 //
 //  Created by Claudiu Miron on 09.10.2023.
@@ -7,28 +7,28 @@
 
 import UIKit
 
-struct SimpleContact {
+struct Person {
     
     let name: String
     let image: UIImage?
     
 }
 
-protocol ContactListViewDataSource: AnyObject {
+protocol PeopleViewDataSource: AnyObject {
     
-    func numberOfitemsInContactListView(_ contactListView: ContactListView) -> Int
-    func contactListView(_ contactListView: ContactListView,
-                         contactAtRow row: Int) -> SimpleContact
+    func count(in peopleView: PeopleView) -> Int
+    func peopleView(_ peopleView: PeopleView, personAtRow row: Int) -> Person
     
 }
 
-protocol ContactListViewDelegate: AnyObject {
-    func contactListView(_ contactListView: ContactListView,
-                         didSelectContactAtRow row: Int)
+protocol PeopleViewDelegate: AnyObject {
+    
+    func peopleView(_ peopleView: PeopleView, didSelectPersonAtRow row: Int)
+    
 }
 
 // TODO: Consider adding nib/storyboard compatibility
-class ContactListView: UIView {
+class PeopleView: UIView {
     
     override var backgroundColor: UIColor? {
         didSet {
@@ -36,10 +36,10 @@ class ContactListView: UIView {
         }
     }
     
-    public weak var dataSource: ContactListViewDataSource?
-    public weak var delegate: ContactListViewDelegate?
+    public weak var dataSource: PeopleViewDataSource?
+    public weak var delegate: PeopleViewDelegate?
     
-    private static let cellId = "ContactListViewCell"
+    private static let cellId = "PeopleViewCell"
     
     private let tableView = UITableView(frame: .zero, style: .plain)
     
@@ -60,8 +60,8 @@ class ContactListView: UIView {
         
         tableView.fill(self)
         
-        tableView.register(ContactListViewCell.self,
-                           forCellReuseIdentifier: ContactListView.cellId)
+        tableView.register(PeopleViewCell.self,
+                           forCellReuseIdentifier: PeopleView.cellId)
         
         // TODO: Separator isn't clearly visible
         //       on physical size sim (iPhone 13 / iOS 16.4)
@@ -82,7 +82,7 @@ class ContactListView: UIView {
     
 }
 
-extension ContactListView: UITableViewDelegate {
+extension PeopleView: UITableViewDelegate {
     
     internal func tableView(_ tableView: UITableView,
                             heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -91,12 +91,12 @@ extension ContactListView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
-        delegate?.contactListView(self, didSelectContactAtRow: indexPath.row)
+        delegate?.peopleView(self, didSelectPersonAtRow: indexPath.row)
     }
     
 }
 
-extension ContactListView: UITableViewDataSource {
+extension PeopleView: UITableViewDataSource {
     
     internal func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
@@ -104,19 +104,19 @@ extension ContactListView: UITableViewDataSource {
     }
     
     private func itemCountOrZero() -> Int {
-        dataSource?.numberOfitemsInContactListView(self) ?? 0
+        dataSource?.count(in: self) ?? 0
     }
     
     internal func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =
-            tableView.dequeueReusableCell(withIdentifier: ContactListView.cellId,
-                                          for: indexPath) as! ContactListViewCell
+            tableView.dequeueReusableCell(withIdentifier: PeopleView.cellId,
+                                          for: indexPath) as! PeopleViewCell
         
         let row = indexPath.row
         let isLastRow = row == itemCountOrZero() - 1
         
-        let contact = dataSource?.contactListView(self, contactAtRow: row)
+        let contact = dataSource?.peopleView(self, personAtRow: row)
         cell.leadingImage = contact?.image
         cell.name = contact?.name ?? ""
         
