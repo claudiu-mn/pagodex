@@ -145,36 +145,33 @@ extension ContactListViewController: PeopleViewDataSource {
         
         var image: UIImage?
         
-        if !contact.id.isMultiple(of: 2) {
-            // TODO: `0.isMultiple(of: 2) == true` Do we want that?
-            
-            let imageState = remoteImages[id]
-            
-            switch imageState {
-            case .none:
-                remoteImages[id] = .loading
-                Task.init {
-                    let image = try? await imageRepo.getImage(id)
-                    if let image = image {
-                        remoteImages[id] = .success(image)
-                    } else {
-                        remoteImages[id] = .error
-                    }
-                    peopleView.reload(row: row)
+        let imageState = remoteImages[id]
+        
+        switch imageState {
+        case .none:
+            remoteImages[id] = .loading
+            Task.init {
+                let image = try? await imageRepo.getImage(id)
+                if let image = image {
+                    remoteImages[id] = .success(image)
+                } else {
+                    remoteImages[id] = .error
                 }
-                break
-                
-            case .loading:
-                break
-                
-            case .success(let img):
-                image = img
-                break
-                
-            case .error:
-                break
+                peopleView.reload(row: row)
             }
+            break
+            
+        case .loading:
+            break
+            
+        case .success(let img):
+            image = img
+            break
+            
+        case .error:
+            break
         }
+        
         
         return Person(name: contact.email, image: image)
     }

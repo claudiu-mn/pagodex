@@ -24,7 +24,15 @@ actor CachingPhotoRepository: ContactImageRepository {
             return cached
         }
         
-        let image = try await remoteContactImageSource.fetchImage(id)
+        var image: UIImage
+        
+        // TODO: `0.isMultiple(of: 2) == true` Do we want that?
+        if id.isMultiple(of: 2) {
+            // TODO: Feels like a hack
+            image = UIImage()
+        } else {
+            image = try await remoteContactImageSource.fetchImage(id)
+        }
         
         cachedImages[id] = image
 
