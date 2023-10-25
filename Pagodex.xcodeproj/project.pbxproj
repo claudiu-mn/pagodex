@@ -34,6 +34,10 @@
 		B8F3EDD22AE8478B004A601B /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDD12AE8478B004A601B /* FetchState.swift */; };
 		B8F3EDD42AE85B50004A601B /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDD32AE85B50004A601B /* Services.swift */; };
 		B8F3EDD62AE863DA004A601B /* ContactsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDD52AE863DA004A601B /* ContactsModule.swift */; };
+		B8F3EDD82AE9646D004A601B /* PagodexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDD72AE9646D004A601B /* PagodexApp.swift */; };
+		B8F3EDDA2AE96516004A601B /* ServiceContainerization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDD92AE96516004A601B /* ServiceContainerization.swift */; };
+		B8F3EDDD2AE9682B004A601B /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDDC2AE9682B004A601B /* ContactDetailsViewController.swift */; };
+		B8F3EDE02AE96E9D004A601B /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDDF2AE96E9D004A601B /* Dimensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +70,10 @@
 		B8F3EDD12AE8478B004A601B /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
 		B8F3EDD32AE85B50004A601B /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		B8F3EDD52AE863DA004A601B /* ContactsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModule.swift; sourceTree = "<group>"; };
+		B8F3EDD72AE9646D004A601B /* PagodexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagodexApp.swift; sourceTree = "<group>"; };
+		B8F3EDD92AE96516004A601B /* ServiceContainerization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainerization.swift; sourceTree = "<group>"; };
+		B8F3EDDC2AE9682B004A601B /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
+		B8F3EDDF2AE96E9D004A601B /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,7 @@
 				B8E3CABF2AD47DF100997A1B /* Contacts */,
 				B8E3CAC82AD4A2B500997A1B /* Core */,
 				B8C194922AD47B71004320A7 /* AppDelegate.swift */,
+				B8F3EDD72AE9646D004A601B /* PagodexApp.swift */,
 				B8C194942AD47B71004320A7 /* SceneDelegate.swift */,
 				B8C1949B2AD47B73004320A7 /* Assets.xcassets */,
 				B8C1949D2AD47B73004320A7 /* LaunchScreen.storyboard */,
@@ -123,13 +132,14 @@
 		B8E3CABF2AD47DF100997A1B /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				B8F3EDCF2AE8459A004A601B /* ContactsManager.swift */,
+				B8F3EDD52AE863DA004A601B /* ContactsModule.swift */,
+				B8F3EDDB2AE96815004A601B /* DetailsScreen */,
 				B8855D6B2ADF2951008AF1C0 /* Images */,
+				B8E8FE442AD5DD8B00838D4E /* IntIdentifiableContact.swift */,
 				B8E8FE492AD5ECD300838D4E /* ListScreen */,
 				B8E8FE362AD5CA1A00838D4E /* Remote */,
 				B8E8FE312AD5C6E300838D4E /* Repository */,
-				B8E8FE442AD5DD8B00838D4E /* IntIdentifiableContact.swift */,
-				B8F3EDCF2AE8459A004A601B /* ContactsManager.swift */,
-				B8F3EDD52AE863DA004A601B /* ContactsModule.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -138,8 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				B8E3CAC92AD4A2CA00997A1B /* Colors.swift */,
+				B8F3EDDF2AE96E9D004A601B /* Dimensions.swift */,
 				B8F3EDD12AE8478B004A601B /* FetchState.swift */,
-				B8F3EDD32AE85B50004A601B /* Services.swift */,
+				B8F3EDDE2AE969E6004A601B /* Services */,
 				B80FBC732AE5929300118504 /* UIView+Pago.swift */,
 				B8F3EDCC2AE6E614004A601B /* UINavigationController+Pago.swift */,
 			);
@@ -192,6 +203,23 @@
 				B8E8FE4A2AD5F0F400838D4E /* PeopleViewCell.swift */,
 			);
 			path = PeopleView;
+			sourceTree = "<group>";
+		};
+		B8F3EDDB2AE96815004A601B /* DetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B8F3EDDC2AE9682B004A601B /* ContactDetailsViewController.swift */,
+			);
+			path = DetailsScreen;
+			sourceTree = "<group>";
+		};
+		B8F3EDDE2AE969E6004A601B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B8F3EDD32AE85B50004A601B /* Services.swift */,
+				B8F3EDD92AE96516004A601B /* ServiceContainerization.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +298,7 @@
 				B8E3CACA2AD4A2CA00997A1B /* Colors.swift in Sources */,
 				B8F3EDD62AE863DA004A601B /* ContactsModule.swift in Sources */,
 				B8E8FE352AD5C9F000838D4E /* RemoteContactListSource.swift in Sources */,
+				B8F3EDD82AE9646D004A601B /* PagodexApp.swift in Sources */,
 				B8E8FE332AD5C70B00838D4E /* CachingContactListRepository.swift in Sources */,
 				B8E8FE2E2AD5C4EA00838D4E /* ContactRepository.swift in Sources */,
 				B80FBC722AE5715100118504 /* ChevronView.swift in Sources */,
@@ -285,9 +314,12 @@
 				B8855D662ADEFA95008AF1C0 /* CachingPhotoRepository.swift in Sources */,
 				B8E3CAC12AD47E0300997A1B /* PeopleView.swift in Sources */,
 				B8855D6A2ADF250B008AF1C0 /* PicsumPhotos.swift in Sources */,
+				B8F3EDDD2AE9682B004A601B /* ContactDetailsViewController.swift in Sources */,
 				B8E8FE382AD5CA4800838D4E /* RemoteContact.swift in Sources */,
+				B8F3EDDA2AE96516004A601B /* ServiceContainerization.swift in Sources */,
 				B8E8FE4B2AD5F0F400838D4E /* PeopleViewCell.swift in Sources */,
 				B8E8FE302AD5C67900838D4E /* Contact.swift in Sources */,
+				B8F3EDE02AE96E9D004A601B /* Dimensions.swift in Sources */,
 				B8F3EDCD2AE6E614004A601B /* UINavigationController+Pago.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

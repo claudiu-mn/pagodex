@@ -7,7 +7,7 @@
 
 import Combine
 
-class ContactsManager {
+actor ContactsManager {
     
     enum ContactsError: Error {
         case repoError
@@ -22,9 +22,7 @@ class ContactsManager {
     }
     
     func refreshList() async {
-        let list = try? await contactRepository.getList()
-        
-        if let list = list {
+        if let list = try? await contactRepository.getList() {
             listState = .success(list)
         } else {
             listState = .failure(.repoError)

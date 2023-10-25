@@ -12,8 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Services.shared.register(type: ContactsModule.self,
-                                 service: ContactsModule())
+        PagodexApp.start(serviceContainer: Services.shared)
         
         return true
     }

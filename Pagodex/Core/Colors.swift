@@ -7,10 +7,12 @@
 
 import UIKit
 
-class Colors {
-
+final class Colors {
+    
+    private init() { }
+    
     /// Change this to false to enable dark mode support.
-    private static let forceLight = true
+    private static let forceLight = false
     
     static let backgroundPrimary = UIColor { traits in
         return chooseObject(traitCollection: traits,
@@ -69,12 +71,10 @@ extension UIColor {
     }
 
     convenience init(rgb: UInt, alpha: CGFloat) {
-        self.init(
-            red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgb & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgb & 0x0000FF) / 255.0,
-            alpha: CGFloat(alpha)
-        )
+        self.init(red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
+                  green: CGFloat((rgb & 0x00FF00) >> 8) / 255.0,
+                  blue: CGFloat(rgb & 0x0000FF) / 255.0,
+                  alpha: CGFloat(alpha))
     }
     
 }

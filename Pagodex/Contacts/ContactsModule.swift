@@ -24,20 +24,19 @@ class ContactsModule {
 
 extension ContactsModule: ContactListViewControllerDelegate {
     
-    func contactListViewController(_ contactListViewController: ContactListViewController,
-                                   didSelectContact contact: Contact) {
-        let newViewController = UIViewController()
-        newViewController.title = "Adaugă contact"
-        newViewController.view.backgroundColor = .white
-        
-        rootViewController.pushViewController(newViewController,
-                                              animated: true)
-        
-        debugPrint("Selected \(contact)")
+    internal func contactListViewController(_ contactListViewController: ContactListViewController,
+                                            didSelectContact contact: Contact) {
+        pushDetailsScreen(contact: contact)
     }
     
-    func didWantNewContact(in contactListViewController: ContactListViewController) {
-        debugPrint("Should add a new contact at some point...")
+    internal func didWantNewContact(in contactListViewController: ContactListViewController) {
+        pushDetailsScreen()
+    }
+    
+    private func pushDetailsScreen(contact: Contact? = nil) {
+        let detailsVC = ContactDetailsViewController()
+        
+        rootViewController.pushViewController(detailsVC, animated: true)
     }
     
 }

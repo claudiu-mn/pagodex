@@ -6,7 +6,9 @@
 //
 
 enum FetchState<Success, Failure> {
+    
     case loading
     case success (Success)
     case failure (Failure)
+    
 }

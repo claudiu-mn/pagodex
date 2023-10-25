@@ -11,9 +11,6 @@ import UIKit
 // TODO: Can we flatten the view hierarchy?
 class PeopleViewCell: UITableViewCell {
     
-    private static let spacing = 24.0
-    private static let chevronSize = CGSize(width: 9, height: 16)
-    
     private weak var stackView: UIStackView!
     
     private weak var leadingView: UIView!
@@ -82,7 +79,7 @@ class PeopleViewCell: UITableViewCell {
     }
     
     private func setUpViews() {
-        let spacing = PeopleViewCell.spacing
+        let spacing = Dimensions.standardSpacing
         
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +95,7 @@ class PeopleViewCell: UITableViewCell {
         leadingView.layer.masksToBounds = true
         leadingView.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(leadingView)
-        stackView.setCustomSpacing(PeopleViewCell.spacing,
+        stackView.setCustomSpacing(Dimensions.standardSpacing,
                                    after: leadingView)
         leadingView.widthAnchor.constraint(equalTo: leadingView.heightAnchor).isActive = true
         self.leadingView = leadingView
@@ -129,7 +126,7 @@ class PeopleViewCell: UITableViewCell {
         trailingView.translatesAutoresizingMaskIntoConstraints = false
         stackView.addArrangedSubview(trailingView)
         
-        trailingView.widthAnchor.constraint(equalToConstant: PeopleViewCell.chevronSize.width).isActive = true
+        trailingView.widthAnchor.constraint(equalToConstant: Dimensions.chevronSize.width).isActive = true
         
         self.trailingView = trailingView
         
@@ -142,15 +139,15 @@ class PeopleViewCell: UITableViewCell {
         
         chevron.centerXAnchor.constraint(equalTo: trailingView.centerXAnchor).isActive = true
         chevron.centerYAnchor.constraint(equalTo: trailingView.centerYAnchor).isActive = true
-        chevron.widthAnchor.constraint(equalToConstant: PeopleViewCell.chevronSize.width).isActive = true
-        chevron.heightAnchor.constraint(equalToConstant: PeopleViewCell.chevronSize.height).isActive = true
+        chevron.widthAnchor.constraint(equalToConstant: Dimensions.chevronSize.width).isActive = true
+        chevron.heightAnchor.constraint(equalToConstant: Dimensions.chevronSize.height).isActive = true
         
         updateDisclosureIndicatorVisibility(hasDisclosureIndicator)
     }
     
     private func updateDisclosureIndicatorVisibility(_ visible: Bool) {
         trailingView.isHidden = !visible
-        let spacing = visible ? PeopleViewCell.spacing : 0.0
+        let spacing = visible ? Dimensions.standardSpacing : 0.0
         stackView.setCustomSpacing(spacing, after: nameLabel)
     }
     

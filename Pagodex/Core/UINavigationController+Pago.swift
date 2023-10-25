@@ -27,7 +27,7 @@ extension UINavigationController {
         navBar.standardAppearance = standardAppearance
         navBar.scrollEdgeAppearance = standardAppearance
         navBar.compactAppearance = compactAppearance
-        navBar.layoutMargins.left = 24
+        navBar.layoutMargins.left = Dimensions.standardSpacing
         if #available(iOS 15.0, *) {
             navBar.compactScrollEdgeAppearance = compactAppearance
         }

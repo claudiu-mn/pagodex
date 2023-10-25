@@ -54,16 +54,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-
-extension SceneDelegate: ContactListViewControllerDelegate {
-    
-    func contactListViewController(_ contactListViewController: ContactListViewController,
-                                   didSelectContact contact: Contact) {
-        debugPrint("selected contact \(contact)")
-    }
-    
-    func didWantNewContact(in contactListViewController: ContactListViewController) {
-        debugPrint("Add a new contact!")
-    }
-    
-}

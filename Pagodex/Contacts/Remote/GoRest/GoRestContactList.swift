@@ -21,10 +21,9 @@ class GoRestContactList: RemoteContactListSource {
     func fetchList() async throws -> [RemoteContact] {
         let url = URL(string: "https://gorest.co.in/public/v2/users")!
         let (data, _) = try await URLSession.shared.data(from: url)
-        let goRestContacts = try JSONDecoder().decode([GoRestContact].self,
-                                                      from: data)
+        let list = try JSONDecoder().decode([GoRestContact].self, from: data)
         
-        return listTransformer(goRestContacts)
+        return listTransformer(list)
     }
     
 }

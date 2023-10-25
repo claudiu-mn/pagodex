@@ -5,7 +5,7 @@
 //  Created by Claudiu Miron on 24.10.2023.
 //
 
-final class Services {
+final class Services: ServiceContainerization {
     
     static let shared = Services()
     
@@ -18,8 +18,6 @@ final class Services {
     }
     
     func resolve<Service>(type: Service.Type) -> Service {
-        let service = services["\(type)"] as? Service
-        
         guard let service = services["\(type)"] as? Service else {
             fatalError("No service of type '\(type)' was found? Forgot to register it beforehand?")
         }
