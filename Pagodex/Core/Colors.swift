@@ -48,7 +48,7 @@ class Colors {
     }
     
     static let button = UIColor { traits in
-        return UIColor(rgb: 0x98A5BE)
+        return UIColor(rgb: 0x2B59C3)
     }
     
     private static func chooseObject<T>(traitCollection: UITraitCollection,

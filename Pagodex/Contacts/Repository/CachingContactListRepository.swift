@@ -7,7 +7,7 @@
 
 // TODO: Are we sure we want this to be an actor just to shield `list`
 //       from multiple simultaneous writes?
-actor CachingContactListRepository: ContactListRepository {
+actor CachingContactListRepository: ContactRepository {
     
     private let remoteContactListSource: RemoteContactListSource
     private let remoteContactMapper: (RemoteContact) -> Contact

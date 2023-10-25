@@ -32,6 +32,21 @@ class ContactListViewController: UIViewController {
     
     private weak var peopleView: PeopleView!
     
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available(*, unavailable)
+    override init(nibName nibNameOrNil: String?,
+                  bundle nibBundleOrNil: Bundle?) {
+        fatalError("init(nibName:, bundle:) is not supported")
+    }
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) is not supported")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 

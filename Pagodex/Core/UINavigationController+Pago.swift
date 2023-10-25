@@ -21,6 +21,7 @@ extension UINavigationController {
         let compactAppearance = standardAppearance.copy()
         
         let navBar = navigationBar
+        navBar.tintColor = Colors.button
         navBar.overrideUserInterfaceStyle = Colors.overridenUserInterfaceStyle(for: traitCollection)
         navBar.prefersLargeTitles = true
         navBar.standardAppearance = standardAppearance

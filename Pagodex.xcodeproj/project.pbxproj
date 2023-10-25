@@ -20,7 +20,7 @@
 		B8C1949F2AD47B73004320A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8C1949D2AD47B73004320A7 /* LaunchScreen.storyboard */; };
 		B8E3CAC12AD47E0300997A1B /* PeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E3CAC02AD47E0300997A1B /* PeopleView.swift */; };
 		B8E3CACA2AD4A2CA00997A1B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E3CAC92AD4A2CA00997A1B /* Colors.swift */; };
-		B8E8FE2E2AD5C4EA00838D4E /* ContactListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE2D2AD5C4EA00838D4E /* ContactListRepository.swift */; };
+		B8E8FE2E2AD5C4EA00838D4E /* ContactRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE2D2AD5C4EA00838D4E /* ContactRepository.swift */; };
 		B8E8FE302AD5C67900838D4E /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE2F2AD5C67900838D4E /* Contact.swift */; };
 		B8E8FE332AD5C70B00838D4E /* CachingContactListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE322AD5C70B00838D4E /* CachingContactListRepository.swift */; };
 		B8E8FE352AD5C9F000838D4E /* RemoteContactListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE342AD5C9F000838D4E /* RemoteContactListSource.swift */; };
@@ -30,6 +30,10 @@
 		B8E8FE482AD5E25300838D4E /* GoRestContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE472AD5E25300838D4E /* GoRestContact.swift */; };
 		B8E8FE4B2AD5F0F400838D4E /* PeopleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE4A2AD5F0F400838D4E /* PeopleViewCell.swift */; };
 		B8F3EDCD2AE6E614004A601B /* UINavigationController+Pago.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDCC2AE6E614004A601B /* UINavigationController+Pago.swift */; };
+		B8F3EDD02AE8459A004A601B /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDCF2AE8459A004A601B /* ContactsManager.swift */; };
+		B8F3EDD22AE8478B004A601B /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDD12AE8478B004A601B /* FetchState.swift */; };
+		B8F3EDD42AE85B50004A601B /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDD32AE85B50004A601B /* Services.swift */; };
+		B8F3EDD62AE863DA004A601B /* ContactsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDD52AE863DA004A601B /* ContactsModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +52,7 @@
 		B8C194A02AD47B73004320A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8E3CAC02AD47E0300997A1B /* PeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleView.swift; sourceTree = "<group>"; };
 		B8E3CAC92AD4A2CA00997A1B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		B8E8FE2D2AD5C4EA00838D4E /* ContactListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListRepository.swift; sourceTree = "<group>"; };
+		B8E8FE2D2AD5C4EA00838D4E /* ContactRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRepository.swift; sourceTree = "<group>"; };
 		B8E8FE2F2AD5C67900838D4E /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		B8E8FE322AD5C70B00838D4E /* CachingContactListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingContactListRepository.swift; sourceTree = "<group>"; };
 		B8E8FE342AD5C9F000838D4E /* RemoteContactListSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteContactListSource.swift; sourceTree = "<group>"; };
@@ -58,6 +62,10 @@
 		B8E8FE472AD5E25300838D4E /* GoRestContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestContact.swift; sourceTree = "<group>"; };
 		B8E8FE4A2AD5F0F400838D4E /* PeopleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewCell.swift; sourceTree = "<group>"; };
 		B8F3EDCC2AE6E614004A601B /* UINavigationController+Pago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Pago.swift"; sourceTree = "<group>"; };
+		B8F3EDCF2AE8459A004A601B /* ContactsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
+		B8F3EDD12AE8478B004A601B /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
+		B8F3EDD32AE85B50004A601B /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		B8F3EDD52AE863DA004A601B /* ContactsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,8 @@
 				B8E8FE362AD5CA1A00838D4E /* Remote */,
 				B8E8FE312AD5C6E300838D4E /* Repository */,
 				B8E8FE442AD5DD8B00838D4E /* IntIdentifiableContact.swift */,
+				B8F3EDCF2AE8459A004A601B /* ContactsManager.swift */,
+				B8F3EDD52AE863DA004A601B /* ContactsModule.swift */,
 			);
 			path = Contacts;
 			sourceTree = "<group>";
@@ -128,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				B8E3CAC92AD4A2CA00997A1B /* Colors.swift */,
+				B8F3EDD12AE8478B004A601B /* FetchState.swift */,
+				B8F3EDD32AE85B50004A601B /* Services.swift */,
 				B80FBC732AE5929300118504 /* UIView+Pago.swift */,
 				B8F3EDCC2AE6E614004A601B /* UINavigationController+Pago.swift */,
 			);
@@ -139,7 +151,7 @@
 			children = (
 				B8E8FE322AD5C70B00838D4E /* CachingContactListRepository.swift */,
 				B8E8FE2F2AD5C67900838D4E /* Contact.swift */,
-				B8E8FE2D2AD5C4EA00838D4E /* ContactListRepository.swift */,
+				B8E8FE2D2AD5C4EA00838D4E /* ContactRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -256,14 +268,18 @@
 				B80FBC742AE5929300118504 /* UIView+Pago.swift in Sources */,
 				B8C194972AD47B71004320A7 /* ContactListViewController.swift in Sources */,
 				B8E3CACA2AD4A2CA00997A1B /* Colors.swift in Sources */,
+				B8F3EDD62AE863DA004A601B /* ContactsModule.swift in Sources */,
 				B8E8FE352AD5C9F000838D4E /* RemoteContactListSource.swift in Sources */,
 				B8E8FE332AD5C70B00838D4E /* CachingContactListRepository.swift in Sources */,
-				B8E8FE2E2AD5C4EA00838D4E /* ContactListRepository.swift in Sources */,
+				B8E8FE2E2AD5C4EA00838D4E /* ContactRepository.swift in Sources */,
 				B80FBC722AE5715100118504 /* ChevronView.swift in Sources */,
 				B8E8FE482AD5E25300838D4E /* GoRestContact.swift in Sources */,
 				B8E8FE452AD5DD8B00838D4E /* IntIdentifiableContact.swift in Sources */,
+				B8F3EDD22AE8478B004A601B /* FetchState.swift in Sources */,
 				B8855D682ADF215B008AF1C0 /* RemoteContactImageSource.swift in Sources */,
 				B8C194932AD47B71004320A7 /* AppDelegate.swift in Sources */,
+				B8F3EDD42AE85B50004A601B /* Services.swift in Sources */,
+				B8F3EDD02AE8459A004A601B /* ContactsManager.swift in Sources */,
 				B8C194952AD47B71004320A7 /* SceneDelegate.swift in Sources */,
 				B8855D642ADEF80F008AF1C0 /* ContactImageRepository.swift in Sources */,
 				B8855D662ADEFA95008AF1C0 /* CachingPhotoRepository.swift in Sources */,

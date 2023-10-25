@@ -16,15 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let viewController = ContactListViewController()
-        viewController.delegate = self
+        window = UIWindow(windowScene: windowScene)
         
-        let nav = UINavigationController(rootViewController: viewController)
+        let contactsModule = Services.shared.resolve(type: ContactsModule.self)
+        window!.rootViewController = contactsModule.rootViewController
         
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = nav
-        self.window = window
-        window.makeKeyAndVisible()
+        window!.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

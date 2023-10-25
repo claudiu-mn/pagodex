@@ -10,9 +10,11 @@ import Foundation
 // TODO: I believe this class can be broken down into several parts
 class GoRestContactList: RemoteContactListSource {
     
+    typealias ListTransformer = ([GoRestContact]) -> [RemoteContact]
+    
     private let listTransformer: ([GoRestContact]) -> [RemoteContact]
     
-    init(listTransformer: @escaping ([GoRestContact]) -> [RemoteContact]) {
+    init(listTransformer: @escaping ListTransformer) {
         self.listTransformer = listTransformer
     }
     
