@@ -21,6 +21,11 @@ extension UIView {
                                 constant: -insets.bottom).isActive = true
     }
     
+    internal func center(in aView:UIView) {
+        centerXAnchor.constraint(equalTo: aView.centerXAnchor).isActive = true
+        centerYAnchor.constraint(equalTo: aView.centerYAnchor).isActive = true
+    }
+    
     /// Draws a right-pointing chevron.
     internal func drawChevron(in rect: CGRect,
                               lineWidth: CGFloat = 2,

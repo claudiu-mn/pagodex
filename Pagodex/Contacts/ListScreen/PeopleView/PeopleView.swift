@@ -12,6 +12,11 @@ struct Person {
     let name: String
     let image: UIImage?
     
+    init(name: String, image: UIImage? = nil) {
+        self.name = name
+        self.image = image
+    }
+    
 }
 
 protocol PeopleViewDataSource: AnyObject {
@@ -30,12 +35,6 @@ protocol PeopleViewDelegate: AnyObject {
 // TODO: Consider adding nib/storyboard compatibility
 class PeopleView: UIView {
     
-    override var backgroundColor: UIColor? {
-        didSet {
-            tableView.backgroundColor = .clear
-        }
-    }
-    
     public weak var dataSource: PeopleViewDataSource?
     public weak var delegate: PeopleViewDelegate?
     
@@ -43,9 +42,15 @@ class PeopleView: UIView {
     
     private let tableView = UITableView(frame: .zero, style: .plain)
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init() {
+        super.init(frame: .zero)
+        
         setUpTableView()
+    }
+    
+    @available(*, unavailable)
+    override init(frame: CGRect) {
+        fatalError("init(frame:) is not supported")
     }
     
     @available(*, unavailable)
@@ -67,6 +72,8 @@ class PeopleView: UIView {
         //       on physical size sim (iPhone 13 / iOS 16.4)
         tableView.separatorInset = .zero
         
+        tableView.backgroundColor = .clear
+        
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -83,17 +90,17 @@ class PeopleView: UIView {
 }
 
 extension PeopleView: UITableViewDelegate {
-    
+
     internal func tableView(_ tableView: UITableView,
                             heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 94
     }
-    
-    func tableView(_ tableView: UITableView,
+
+    internal func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
         delegate?.peopleView(self, didSelectPersonAtRow: indexPath.row)
     }
-    
+
 }
 
 extension PeopleView: UITableViewDataSource {
@@ -103,7 +110,7 @@ extension PeopleView: UITableViewDataSource {
         itemCountOrZero()
     }
     
-    private func itemCountOrZero() -> Int {
+    internal func itemCountOrZero() -> Int {
         dataSource?.count(in: self) ?? 0
     }
     

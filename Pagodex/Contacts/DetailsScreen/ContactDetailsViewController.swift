@@ -9,10 +9,9 @@ import UIKit
 
 class ContactDetailsViewController: UIViewController {
     
+    @available(*, unavailable)
     init() {
-        super.init(nibName: nil, bundle: nil)
-        
-        title = "Adaugă contact" // TODO: Add i18n
+        fatalError("init() is not supported")
     }
     
     @available(*, unavailable)
@@ -24,6 +23,12 @@ class ContactDetailsViewController: UIViewController {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) is not supported")
+    }
+    
+    init(name: String?) {
+        super.init(nibName: nil, bundle: nil)
+        
+        title = name ?? "Adaugă contact" // TODO: Add i18n
     }
     
     override func viewDidLoad() {

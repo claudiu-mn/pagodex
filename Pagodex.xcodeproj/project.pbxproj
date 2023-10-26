@@ -13,6 +13,11 @@
 		B8855D662ADEFA95008AF1C0 /* CachingPhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8855D652ADEFA95008AF1C0 /* CachingPhotoRepository.swift */; };
 		B8855D682ADF215B008AF1C0 /* RemoteContactImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8855D672ADF215B008AF1C0 /* RemoteContactImageSource.swift */; };
 		B8855D6A2ADF250B008AF1C0 /* PicsumPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8855D692ADF250B008AF1C0 /* PicsumPhotos.swift */; };
+		B887619F2AEAAE400008C630 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B887619E2AEAAE400008C630 /* ContactListView.swift */; };
+		B88761A12AEAAECA0008C630 /* ContactListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88761A02AEAAECA0008C630 /* ContactListViewPresenter.swift */; };
+		B88761A32AEAB0AE0008C630 /* ContactListViewing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88761A22AEAB0AE0008C630 /* ContactListViewing.swift */; };
+		B88761A52AEAB2710008C630 /* ContactListViewPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88761A42AEAB2710008C630 /* ContactListViewPresenting.swift */; };
+		B88761A72AEACAC40008C630 /* UIEdgeInsets+Pago.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88761A62AEACAC40008C630 /* UIEdgeInsets+Pago.swift */; };
 		B8C194932AD47B71004320A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C194922AD47B71004320A7 /* AppDelegate.swift */; };
 		B8C194952AD47B71004320A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C194942AD47B71004320A7 /* SceneDelegate.swift */; };
 		B8C194972AD47B71004320A7 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C194962AD47B71004320A7 /* ContactListViewController.swift */; };
@@ -38,6 +43,7 @@
 		B8F3EDDA2AE96516004A601B /* ServiceContainerization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDD92AE96516004A601B /* ServiceContainerization.swift */; };
 		B8F3EDDD2AE9682B004A601B /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDDC2AE9682B004A601B /* ContactDetailsViewController.swift */; };
 		B8F3EDE02AE96E9D004A601B /* Dimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDDF2AE96E9D004A601B /* Dimensions.swift */; };
+		B8F3EDE52AE99166004A601B /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDE42AE99166004A601B /* ContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +53,11 @@
 		B8855D652ADEFA95008AF1C0 /* CachingPhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingPhotoRepository.swift; sourceTree = "<group>"; };
 		B8855D672ADF215B008AF1C0 /* RemoteContactImageSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteContactImageSource.swift; sourceTree = "<group>"; };
 		B8855D692ADF250B008AF1C0 /* PicsumPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumPhotos.swift; sourceTree = "<group>"; };
+		B887619E2AEAAE400008C630 /* ContactListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		B88761A02AEAAECA0008C630 /* ContactListViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewPresenter.swift; sourceTree = "<group>"; };
+		B88761A22AEAB0AE0008C630 /* ContactListViewing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewing.swift; sourceTree = "<group>"; };
+		B88761A42AEAB2710008C630 /* ContactListViewPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewPresenting.swift; sourceTree = "<group>"; };
+		B88761A62AEACAC40008C630 /* UIEdgeInsets+Pago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Pago.swift"; sourceTree = "<group>"; };
 		B8C1948F2AD47B71004320A7 /* Pagodex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pagodex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C194922AD47B71004320A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8C194942AD47B71004320A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +85,7 @@
 		B8F3EDD92AE96516004A601B /* ServiceContainerization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainerization.swift; sourceTree = "<group>"; };
 		B8F3EDDC2AE9682B004A601B /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		B8F3EDDF2AE96E9D004A601B /* Dimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dimensions.swift; sourceTree = "<group>"; };
+		B8F3EDE42AE99166004A601B /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,18 @@
 				B8855D672ADF215B008AF1C0 /* RemoteContactImageSource.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		B887619D2AEAAE270008C630 /* ContactListView */ = {
+			isa = PBXGroup;
+			children = (
+				B887619E2AEAAE400008C630 /* ContactListView.swift */,
+				B88761A22AEAB0AE0008C630 /* ContactListViewing.swift */,
+				B8C194962AD47B71004320A7 /* ContactListViewController.swift */,
+				B88761A02AEAAECA0008C630 /* ContactListViewPresenter.swift */,
+				B88761A42AEAB2710008C630 /* ContactListViewPresenting.swift */,
+			);
+			path = ContactListView;
 			sourceTree = "<group>";
 		};
 		B8C194862AD47B71004320A7 = {
@@ -148,9 +172,11 @@
 			isa = PBXGroup;
 			children = (
 				B8E3CAC92AD4A2CA00997A1B /* Colors.swift */,
+				B8F3EDE42AE99166004A601B /* ContainerView.swift */,
 				B8F3EDDF2AE96E9D004A601B /* Dimensions.swift */,
 				B8F3EDD12AE8478B004A601B /* FetchState.swift */,
 				B8F3EDDE2AE969E6004A601B /* Services */,
+				B88761A62AEACAC40008C630 /* UIEdgeInsets+Pago.swift */,
 				B80FBC732AE5929300118504 /* UIView+Pago.swift */,
 				B8F3EDCC2AE6E614004A601B /* UINavigationController+Pago.swift */,
 			);
@@ -189,8 +215,8 @@
 		B8E8FE492AD5ECD300838D4E /* ListScreen */ = {
 			isa = PBXGroup;
 			children = (
+				B887619D2AEAAE270008C630 /* ContactListView */,
 				B8F3EDCE2AE83325004A601B /* PeopleView */,
-				B8C194962AD47B71004320A7 /* ContactListViewController.swift */,
 			);
 			path = ListScreen;
 			sourceTree = "<group>";
@@ -293,10 +319,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8E8FE432AD5D81600838D4E /* GoRestContactList.swift in Sources */,
+				B887619F2AEAAE400008C630 /* ContactListView.swift in Sources */,
+				B8F3EDE52AE99166004A601B /* ContainerView.swift in Sources */,
 				B80FBC742AE5929300118504 /* UIView+Pago.swift in Sources */,
 				B8C194972AD47B71004320A7 /* ContactListViewController.swift in Sources */,
 				B8E3CACA2AD4A2CA00997A1B /* Colors.swift in Sources */,
 				B8F3EDD62AE863DA004A601B /* ContactsModule.swift in Sources */,
+				B88761A32AEAB0AE0008C630 /* ContactListViewing.swift in Sources */,
 				B8E8FE352AD5C9F000838D4E /* RemoteContactListSource.swift in Sources */,
 				B8F3EDD82AE9646D004A601B /* PagodexApp.swift in Sources */,
 				B8E8FE332AD5C70B00838D4E /* CachingContactListRepository.swift in Sources */,
@@ -309,7 +338,9 @@
 				B8C194932AD47B71004320A7 /* AppDelegate.swift in Sources */,
 				B8F3EDD42AE85B50004A601B /* Services.swift in Sources */,
 				B8F3EDD02AE8459A004A601B /* ContactsManager.swift in Sources */,
+				B88761A72AEACAC40008C630 /* UIEdgeInsets+Pago.swift in Sources */,
 				B8C194952AD47B71004320A7 /* SceneDelegate.swift in Sources */,
+				B88761A12AEAAECA0008C630 /* ContactListViewPresenter.swift in Sources */,
 				B8855D642ADEF80F008AF1C0 /* ContactImageRepository.swift in Sources */,
 				B8855D662ADEFA95008AF1C0 /* CachingPhotoRepository.swift in Sources */,
 				B8E3CAC12AD47E0300997A1B /* PeopleView.swift in Sources */,
@@ -318,6 +349,7 @@
 				B8E8FE382AD5CA4800838D4E /* RemoteContact.swift in Sources */,
 				B8F3EDDA2AE96516004A601B /* ServiceContainerization.swift in Sources */,
 				B8E8FE4B2AD5F0F400838D4E /* PeopleViewCell.swift in Sources */,
+				B88761A52AEAB2710008C630 /* ContactListViewPresenting.swift in Sources */,
 				B8E8FE302AD5C67900838D4E /* Contact.swift in Sources */,
 				B8F3EDE02AE96E9D004A601B /* Dimensions.swift in Sources */,
 				B8F3EDCD2AE6E614004A601B /* UINavigationController+Pago.swift in Sources */,
