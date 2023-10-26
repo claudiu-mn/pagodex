@@ -34,7 +34,7 @@ extension ContactsModule: ContactListViewControllerDelegate {
     }
     
     private func pushDetailsScreen(contact: Contact? = nil) {
-        let detailsVC = ContactDetailsViewController(name: contact?.email)
+        let detailsVC = ContactDetailsViewController(contact: contact)
         
         rootViewController.pushViewController(detailsVC, animated: true)
     }

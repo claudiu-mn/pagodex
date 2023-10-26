@@ -5,7 +5,7 @@
 //  Created by Claudiu Miron on 10.10.2023.
 //
 
-struct GoRestContact: Codable, IntIdentifiableContact {
+struct GoRestContact: Codable {
     
     let id: Int
     let name: String

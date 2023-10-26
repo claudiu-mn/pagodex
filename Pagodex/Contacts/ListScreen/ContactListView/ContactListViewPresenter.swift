@@ -100,7 +100,9 @@ extension ContactListViewPresenter: ContactListViewPresenting {
     }
     
     func get(personAt row: Int) -> Person {
-        let name = contacts[row].email
+        let contact = contacts[row]
+        
+        let name = contact.fullName
 
         guard let cachedImage = images[row] else {
             Task.init { await fetchImageForContact(at: row) }

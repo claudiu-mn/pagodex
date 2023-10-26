@@ -25,10 +25,10 @@ class ContactDetailsViewController: UIViewController {
         fatalError("init(coder:) is not supported")
     }
     
-    init(name: String?) {
+    init(contact: Contact?) {
         super.init(nibName: nil, bundle: nil)
         
-        title = name ?? "Adaugă contact" // TODO: Add i18n
+        title = contact?.fullName ?? "Adaugă contact" // TODO: Add i18n
     }
     
     override func viewDidLoad() {

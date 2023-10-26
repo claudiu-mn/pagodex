@@ -159,16 +159,3 @@ class PeopleViewCell: UITableViewCell {
     }
     
 }
-
-/// Stolen shamelessly from https://stackoverflow.com/a/64576199
-extension String {
-    // TODO: This hasn't been tested/looked at properly
-    // TODO: What about multiple spaces?
-    var initials: String {
-        return self.components(separatedBy: " ")
-            .reduce("") {
-                ($0.isEmpty ? "" : "\($0.first?.uppercased() ?? "")") +
-                ($1.isEmpty ? "" : "\($1.first?.uppercased() ?? "")")
-            }
-    }
-}

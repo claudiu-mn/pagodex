@@ -18,6 +18,8 @@
 		B88761A32AEAB0AE0008C630 /* ContactListViewing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88761A22AEAB0AE0008C630 /* ContactListViewing.swift */; };
 		B88761A52AEAB2710008C630 /* ContactListViewPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88761A42AEAB2710008C630 /* ContactListViewPresenting.swift */; };
 		B88761A72AEACAC40008C630 /* UIEdgeInsets+Pago.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88761A62AEACAC40008C630 /* UIEdgeInsets+Pago.swift */; };
+		B88761A92AEAF0270008C630 /* String+Pago.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88761A82AEAF0270008C630 /* String+Pago.swift */; };
+		B88761AB2AEAF1F60008C630 /* PersonNameComponents+Pago.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88761AA2AEAF1F60008C630 /* PersonNameComponents+Pago.swift */; };
 		B8C194932AD47B71004320A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C194922AD47B71004320A7 /* AppDelegate.swift */; };
 		B8C194952AD47B71004320A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C194942AD47B71004320A7 /* SceneDelegate.swift */; };
 		B8C194972AD47B71004320A7 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C194962AD47B71004320A7 /* ContactListViewController.swift */; };
@@ -31,7 +33,7 @@
 		B8E8FE352AD5C9F000838D4E /* RemoteContactListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE342AD5C9F000838D4E /* RemoteContactListSource.swift */; };
 		B8E8FE382AD5CA4800838D4E /* RemoteContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE372AD5CA4800838D4E /* RemoteContact.swift */; };
 		B8E8FE432AD5D81600838D4E /* GoRestContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE422AD5D81500838D4E /* GoRestContactList.swift */; };
-		B8E8FE452AD5DD8B00838D4E /* IntIdentifiableContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE442AD5DD8B00838D4E /* IntIdentifiableContact.swift */; };
+		B8E8FE452AD5DD8B00838D4E /* PagoContactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE442AD5DD8B00838D4E /* PagoContactable.swift */; };
 		B8E8FE482AD5E25300838D4E /* GoRestContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE472AD5E25300838D4E /* GoRestContact.swift */; };
 		B8E8FE4B2AD5F0F400838D4E /* PeopleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8FE4A2AD5F0F400838D4E /* PeopleViewCell.swift */; };
 		B8F3EDCD2AE6E614004A601B /* UINavigationController+Pago.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EDCC2AE6E614004A601B /* UINavigationController+Pago.swift */; };
@@ -58,6 +60,8 @@
 		B88761A22AEAB0AE0008C630 /* ContactListViewing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewing.swift; sourceTree = "<group>"; };
 		B88761A42AEAB2710008C630 /* ContactListViewPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewPresenting.swift; sourceTree = "<group>"; };
 		B88761A62AEACAC40008C630 /* UIEdgeInsets+Pago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Pago.swift"; sourceTree = "<group>"; };
+		B88761A82AEAF0270008C630 /* String+Pago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Pago.swift"; sourceTree = "<group>"; };
+		B88761AA2AEAF1F60008C630 /* PersonNameComponents+Pago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonNameComponents+Pago.swift"; sourceTree = "<group>"; };
 		B8C1948F2AD47B71004320A7 /* Pagodex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pagodex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8C194922AD47B71004320A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8C194942AD47B71004320A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +77,7 @@
 		B8E8FE342AD5C9F000838D4E /* RemoteContactListSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteContactListSource.swift; sourceTree = "<group>"; };
 		B8E8FE372AD5CA4800838D4E /* RemoteContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteContact.swift; sourceTree = "<group>"; };
 		B8E8FE422AD5D81500838D4E /* GoRestContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestContactList.swift; sourceTree = "<group>"; };
-		B8E8FE442AD5DD8B00838D4E /* IntIdentifiableContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntIdentifiableContact.swift; sourceTree = "<group>"; };
+		B8E8FE442AD5DD8B00838D4E /* PagoContactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagoContactable.swift; sourceTree = "<group>"; };
 		B8E8FE472AD5E25300838D4E /* GoRestContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRestContact.swift; sourceTree = "<group>"; };
 		B8E8FE4A2AD5F0F400838D4E /* PeopleViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewCell.swift; sourceTree = "<group>"; };
 		B8F3EDCC2AE6E614004A601B /* UINavigationController+Pago.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Pago.swift"; sourceTree = "<group>"; };
@@ -160,8 +164,8 @@
 				B8F3EDD52AE863DA004A601B /* ContactsModule.swift */,
 				B8F3EDDB2AE96815004A601B /* DetailsScreen */,
 				B8855D6B2ADF2951008AF1C0 /* Images */,
-				B8E8FE442AD5DD8B00838D4E /* IntIdentifiableContact.swift */,
 				B8E8FE492AD5ECD300838D4E /* ListScreen */,
+				B8E8FE442AD5DD8B00838D4E /* PagoContactable.swift */,
 				B8E8FE362AD5CA1A00838D4E /* Remote */,
 				B8E8FE312AD5C6E300838D4E /* Repository */,
 			);
@@ -179,6 +183,8 @@
 				B88761A62AEACAC40008C630 /* UIEdgeInsets+Pago.swift */,
 				B80FBC732AE5929300118504 /* UIView+Pago.swift */,
 				B8F3EDCC2AE6E614004A601B /* UINavigationController+Pago.swift */,
+				B88761AA2AEAF1F60008C630 /* PersonNameComponents+Pago.swift */,
+				B88761A82AEAF0270008C630 /* String+Pago.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -323,6 +329,7 @@
 				B8F3EDE52AE99166004A601B /* ContainerView.swift in Sources */,
 				B80FBC742AE5929300118504 /* UIView+Pago.swift in Sources */,
 				B8C194972AD47B71004320A7 /* ContactListViewController.swift in Sources */,
+				B88761A92AEAF0270008C630 /* String+Pago.swift in Sources */,
 				B8E3CACA2AD4A2CA00997A1B /* Colors.swift in Sources */,
 				B8F3EDD62AE863DA004A601B /* ContactsModule.swift in Sources */,
 				B88761A32AEAB0AE0008C630 /* ContactListViewing.swift in Sources */,
@@ -332,7 +339,7 @@
 				B8E8FE2E2AD5C4EA00838D4E /* ContactRepository.swift in Sources */,
 				B80FBC722AE5715100118504 /* ChevronView.swift in Sources */,
 				B8E8FE482AD5E25300838D4E /* GoRestContact.swift in Sources */,
-				B8E8FE452AD5DD8B00838D4E /* IntIdentifiableContact.swift in Sources */,
+				B8E8FE452AD5DD8B00838D4E /* PagoContactable.swift in Sources */,
 				B8F3EDD22AE8478B004A601B /* FetchState.swift in Sources */,
 				B8855D682ADF215B008AF1C0 /* RemoteContactImageSource.swift in Sources */,
 				B8C194932AD47B71004320A7 /* AppDelegate.swift in Sources */,
@@ -342,6 +349,7 @@
 				B8C194952AD47B71004320A7 /* SceneDelegate.swift in Sources */,
 				B88761A12AEAAECA0008C630 /* ContactListViewPresenter.swift in Sources */,
 				B8855D642ADEF80F008AF1C0 /* ContactImageRepository.swift in Sources */,
+				B88761AB2AEAF1F60008C630 /* PersonNameComponents+Pago.swift in Sources */,
 				B8855D662ADEFA95008AF1C0 /* CachingPhotoRepository.swift in Sources */,
 				B8E3CAC12AD47E0300997A1B /* PeopleView.swift in Sources */,
 				B8855D6A2ADF250B008AF1C0 /* PicsumPhotos.swift in Sources */,

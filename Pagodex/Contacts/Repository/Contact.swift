@@ -5,9 +5,23 @@
 //  Created by Claudiu Miron on 10.10.2023.
 //
 
-struct Contact: IntIdentifiableContact {
+struct Contact: PagoContactable {
     
     let id: Int
-    let email: String
+    let firstName: String
+    let lastName: String
+    let email: String?
+    let phoneNumber: String?
+    
+}
+
+extension Contact {
+    
+    var fullName: String {
+        get {
+            let suffix = lastName.isEmpty ? "" : " \(lastName)"
+            return "\(firstName)\(suffix)"
+        }
+    }
     
 }
