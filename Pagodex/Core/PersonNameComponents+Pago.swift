@@ -14,7 +14,7 @@ extension PersonNameComponents {
     var firstAndLastInitials: String {
         let first = givenName?.first ?? Character(" ")
         let last = familyName?.first ?? Character(" ")
-        return "\(first)\(last)".strippedOfWhitespaces
+        return "\(first)\(last)".strippedOfWhitespace
     }
     
     // TODO: Think of a better name
@@ -22,7 +22,7 @@ extension PersonNameComponents {
         let first = givenName?.first ?? Character(" ")
         let middle = middleName?.first ?? Character(" ")
         let last = familyName?.first ?? Character(" ")
-        return "\(first)\(middle)\(last)".strippedOfWhitespaces
+        return "\(first)\(middle)\(last)".strippedOfWhitespace
     }
     
 }

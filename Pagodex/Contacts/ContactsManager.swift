@@ -6,6 +6,16 @@
 //
 
 import Combine
+import Foundation
+
+struct ContactInfo: RealPerson {
+    
+    let firstName: String
+    let lastName: String
+    let email: String?
+    let phoneNumber: String?
+    
+}
 
 actor ContactsManager {
     
@@ -16,6 +26,10 @@ actor ContactsManager {
     }
     
     @Published private(set) var listState: ListState = .loading
+    
+    private var repoList: [Contact] = []
+    private var repoEdits: [Contact] = []
+    private var ownList: [Contact] = []
     
     private var contactRepository: ContactRepository
     
@@ -31,10 +45,63 @@ actor ContactsManager {
         listState = .loading
         
         if let list = try? await contactRepository.getList() {
-            listState = .success(list)
+            repoList = list
+            listState = .success(allContacts)
         } else {
             listState = .failure(.repoError)
         }
+    }
+    
+    func updateContact(withId id: Int, info: RealPerson) async {
+        listState = .loading
+        
+//        sleep(5)
+        
+        let contact = Contact(id: id,
+                              firstName: info.firstName,
+                              lastName: info.lastName,
+                              email: info.email,
+                              phoneNumber: info.phoneNumber)
+        
+        // TODO: Find something more akin to singleWhere
+        if let ownIndex = ownList.firstIndex(where: { $0.id == id }) {
+            ownList[ownIndex] = contact
+        } else {
+            ownList.append(contact)
+        }
+        
+        listState = .success(allContacts)
+    }
+    
+    // TODO: Feels dirty because we can't guarantee GoRest gives only positive IDs
+    func addContact(info: RealPerson) async {
+        listState = .loading
+        
+//        sleep(5)
+        
+        let smallestId = ownList.min { $0.id < $1.id }?.id ?? 0
+        
+        ownList.append(Contact(id: smallestId - 1,
+                               firstName: info.firstName,
+                               lastName: info.lastName,
+                               email: info.email,
+                               phoneNumber: info.phoneNumber))
+        
+        listState = .success(allContacts)
+    }
+    
+    private var allContacts: [Contact] {
+        var list = repoList
+        
+        for own in ownList {
+            if let repoIndex = list.firstIndex(where: { $0.id == own.id }) {
+                list[repoIndex] = own
+            } else {
+                list.append(own)
+            }
+        }
+        
+        return list
     }
     
 }

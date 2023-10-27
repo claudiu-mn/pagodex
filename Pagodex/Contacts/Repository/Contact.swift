@@ -19,7 +19,7 @@ extension Contact {
     
     var fullName: String {
         get {
-            let suffix = lastName.isEmpty ? "" : " \(lastName)"
+            let suffix = lastName.strippedOfWhitespace.isEmpty ? "" : " \(lastName)"
             return "\(firstName)\(suffix)"
         }
     }

@@ -49,6 +49,10 @@ final class Colors {
                             dark: UIColor(rgb: 0xFFFFFF))
     }
     
+    static let label = UIColor { traits in
+        return UIColor(rgb: 0x98A5BE)
+    }
+    
     static let button = UIColor { traits in
         return UIColor(rgb: 0x2B59C3)
     }

@@ -35,8 +35,17 @@ extension ContactsModule: ContactListViewControllerDelegate {
     
     private func pushDetailsScreen(contact: Contact? = nil) {
         let detailsVC = ContactDetailsViewController(contact: contact)
+        detailsVC.delegate = self
         
         rootViewController.pushViewController(detailsVC, animated: true)
+    }
+    
+}
+
+extension ContactsModule: ContactDetailsViewControllerDelegate {
+    
+    func didFinish() {
+        rootViewController.popViewController(animated: true)
     }
     
 }

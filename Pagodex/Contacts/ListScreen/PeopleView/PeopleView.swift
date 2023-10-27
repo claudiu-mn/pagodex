@@ -22,6 +22,7 @@ struct Person {
 protocol PeopleViewDataSource: AnyObject {
     
     func count(in peopleView: PeopleView) -> Int
+    
     func peopleView(_ peopleView: PeopleView, personAtRow row: Int) -> Person
     
 }

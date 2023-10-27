@@ -28,10 +28,13 @@ class PagodexApp {
                            phoneNumber: remoteContact.phoneNumber)
         }
         
-        let contactRepo = CachingContactListRepository(remoteContactListSource: goRestContacts,
-                                                       remoteContactMapper: remoteContactMapper)
+        let contactRepo = SimpleContactRepository(remoteContactListSource: goRestContacts,
+                                                  remoteContactMapper: remoteContactMapper)
         
         let contactsManager = ContactsManager(contactRepository: contactRepo)
+        serviceContainer.register(type: ContactsManager.self,
+                                  service: contactsManager)
+        
         Task.init { await contactsManager.refreshList() }
         
         let remoteImageSource = PicsumPhotos()

@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
     
-    /// Stolen shamelessly from https://stackoverflow.com/a/51371892
+    /// Stolen with some shame from https://stackoverflow.com/a/51371892
     var initials: String {
         let formatter = PersonNameComponentsFormatter()
         
@@ -20,7 +20,8 @@ extension String {
         return components.allInitials
     }
     
-    var strippedOfWhitespaces: String {
+    // TODO: Thoroughly test this
+    var strippedOfWhitespace: String {
         return replacingOccurrences(of: "\\s",
                                     with: "",
                                     options: .regularExpression)

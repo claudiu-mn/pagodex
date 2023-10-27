@@ -59,6 +59,7 @@ class ContactListViewController: UIViewController {
         presenter.set(delegate: self)
         presenter.start()
         
+        // TODO: Why is the list view slighlty under the nav bar?
         let contactListView = ContactListView(presenter: presenter)
         contactListView.backgroundColor = .clear
         contactListView.translatesAutoresizingMaskIntoConstraints = false

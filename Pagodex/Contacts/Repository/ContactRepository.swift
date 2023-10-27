@@ -8,6 +8,5 @@
 protocol ContactRepository {
     
     func getList() async throws -> [Contact]
-    func add(_ contact:Contact) async throws
     
 }
